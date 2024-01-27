@@ -63,7 +63,6 @@ public class PlayerInteract : MonoBehaviour
         CheckIfInteractableRange();
     }
 
-
     private void UpdateInteractableDistance()
     {
         if(m_currentInteractableTF)
