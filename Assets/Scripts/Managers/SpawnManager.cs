@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 [System.Serializable]
 public class SpawnAgent
 {
-    public int id;
     public string name;
+    public int id;
 
     public GameObject prefab;
 }
@@ -17,13 +16,21 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private MedBayManager m_medBayManager;
 
     public float m_SpawnRate = 1f; //Spawn Rate in Seconds
-    public int m_MaxAgentsCount = 5;
+    public int m_MaxAgentsCount = 7;
 
     [SerializeField] private Transform m_target;
     [SerializeField] private List<SpawnAgent> m_spawnAgentPrefabs;
     [SerializeField] private Transform m_spawnPoint;
     private float m_currentTime = 0;
     private int m_currentAgentsCount = 0;
+
+    private void Start()
+    {
+        if(m_medBayManager == null)
+        {
+            FindObjectOfType<MedBayManager>();
+        }
+    }
 
     private void Update()
     {
@@ -43,12 +50,16 @@ public class SpawnManager : MonoBehaviour
         {
             m_currentTime = 0;
 
-            GameObject spawnedAgent = Instantiate(m_spawnAgentPrefabs[Random.Range(0, m_spawnAgentPrefabs.Count)].prefab,
-                m_spawnPoint.position, Quaternion.identity);
-
-            //spawnedAgent.transform.SetParent(m_spawnPoint);
-
-            spawnedAgent.GetComponent<PatientController>().SetMedBayManager(m_medBayManager);
+            SpawnPatient();
         }
+    }
+
+    private void SpawnPatient()
+    {
+        PatientController spawnedAgent = Instantiate(m_spawnAgentPrefabs[Random.Range(0, m_spawnAgentPrefabs.Count)].prefab,
+                m_spawnPoint.position, Quaternion.identity).GetComponent<PatientController>();
+
+        spawnedAgent.SetDestination(m_target);
+        spawnedAgent.m_medBayManager = m_medBayManager;
     }
 }
