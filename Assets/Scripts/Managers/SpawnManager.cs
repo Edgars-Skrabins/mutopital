@@ -14,6 +14,8 @@ public class SpawnAgent
 
 public class SpawnManager : MonoBehaviour
 {
+    [SerializeField] private MedBayManager m_medBayManager;
+
     public float m_SpawnRate = 1f; //Spawn Rate in Seconds
     public int m_MaxAgentsCount = 5;
 
@@ -25,7 +27,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        m_currentAgentsCount = m_spawnPoint.childCount;
+        m_currentAgentsCount = FindObjectsOfType<PatientController>().Length;
 
         if (m_currentAgentsCount < m_MaxAgentsCount)
         {
@@ -44,9 +46,9 @@ public class SpawnManager : MonoBehaviour
             GameObject spawnedAgent = Instantiate(m_spawnAgentPrefabs[Random.Range(0, m_spawnAgentPrefabs.Count)].prefab,
                 m_spawnPoint.position, Quaternion.identity);
 
-            spawnedAgent.transform.SetParent(m_spawnPoint);
+            //spawnedAgent.transform.SetParent(m_spawnPoint);
 
-            spawnedAgent.GetComponent<NavMeshAgent>().SetDestination(m_target.position);
+            spawnedAgent.GetComponent<PatientController>().SetMedBayManager(m_medBayManager);
         }
     }
 }

@@ -8,25 +8,10 @@ public class MedBayController : MonoBehaviour
     [SerializeField] private Transform m_exitBayTF;
     [SerializeField] private float castRadius = 1f;
     [SerializeField] private PatientController m_occupant;
-
+    
     private void Update()
     {
-        if(IsMedbayOccupied())
-        {
-            Invoke("UpdateTarget", 5f);
-        }
-    }
-
-    public void UpdateTarget()
-    {
-        if(m_occupant!= null)
-        {
-            m_occupant.SetDestination(m_exitBayTF);
-        }
-        else
-        {
-            Debug.LogError("No Occupant To Update!");
-        }
+        
     }
 
     public bool IsMedbayOccupied()
