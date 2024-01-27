@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dd476964c3d4c649f563467a0f5294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_medBayManager: {fileID: 0}
   m_isHealed: 0
-  m_inHealingProcess: 0
+  m_inTrasitionToMedBay: 0
   m_obstacleCheckRadius: 3
   m_freeMedBay: {fileID: 0}

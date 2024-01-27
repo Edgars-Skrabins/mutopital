@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class MedBayManager : MonoBehaviour
 {
-    private List<MedBayController> m_medBaysAll;
+    [SerializeField] private List<MedBayController> m_medBaysAll;
     [SerializeField] private Transform m_exitPointTF, m_waitPointTF;
 
     private void Start()
     {
         InitializeMedBays();
     }
-
+    public List<MedBayController> GetAllMedBays()
+    {
+        return m_medBaysAll;
+    }
     public Vector3 GetWaitPoint()
     {
         return m_waitPointTF.position;
@@ -37,12 +40,12 @@ public class MedBayManager : MonoBehaviour
         return null;
     }
 
-    public Vector3 GetNearestOccupiedMedBayEdge(Vector3 _patientPos)
+    public Vector3 GetFarthestOccupiedMedBayEdge(Vector3 _patientPos)
     {
         if (m_medBaysAll.Capacity > 0)
         {
             Transform nearestMedBay = null;
-            float closestDistance= 100f;
+            float farthestDistance= 0f;
 
             foreach (MedBayController _medBay in m_medBaysAll)
             {
@@ -50,10 +53,10 @@ public class MedBayManager : MonoBehaviour
                 {
                     float medBayDistance = Vector3.Distance(_patientPos, _medBay.transform.position);
 
-                    if (medBayDistance < closestDistance)
+                    if (medBayDistance > farthestDistance)
                     {
                         nearestMedBay = _medBay.transform;
-                        closestDistance = medBayDistance;
+                        farthestDistance = medBayDistance;
                     }
                     return nearestMedBay.position;
                 }
@@ -66,5 +69,31 @@ public class MedBayManager : MonoBehaviour
     {
         m_medBaysAll = new List<MedBayController>();
         m_medBaysAll.AddRange(FindObjectsOfType<MedBayController>());
+
+        AddMedBayManagerToControllers();
+    }
+
+    public void AddMedBayManagerToControllers()
+    {
+        foreach (MedBayController _medBayController in m_medBaysAll)
+        {
+            _medBayController.SetMedBayManager(this);
+        }
+    }
+
+    public bool IsMedBayAvailable()
+    {
+        int patientsInTransition = 0;
+
+        foreach (PatientController _patient in FindObjectsOfType<PatientController>())
+        {
+            if (_patient.m_inTrasitionToMedBay)
+                patientsInTransition += 1;
+        }
+
+        if (m_medBaysAll.Count == patientsInTransition)
+            return false;
+        else
+            return true;
     }
 }

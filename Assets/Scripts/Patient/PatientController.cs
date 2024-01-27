@@ -3,13 +3,15 @@ using UnityEngine.AI;
 
 public class PatientController : MonoBehaviour
 {
-    private MedBayManager m_medBayManager;
-    [SerializeField] private bool m_isHealed, m_inHealingProcess;
+    public MedBayManager m_medBayManager;
+    public bool m_inTrasitionToMedBay;
+
+    [SerializeField] private bool m_isHealed;
     [SerializeField] private float m_obstacleCheckRadius = 2f;
     private NavMeshAgent m_navMeshAgent;
-    [SerializeField]private MedBayController m_freeMedBay;
+    [SerializeField] private MedBayController m_freeMedBay;
 
-    private void Start()
+    private void Awake()
     {
         m_navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -18,34 +20,50 @@ public class PatientController : MonoBehaviour
     {
         if (!m_isHealed)
         {
-            m_freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
-
-            if (m_freeMedBay != null)
+            if (Vector3.Distance(transform.position, m_medBayManager.GetWaitPoint()) < .1f
+                && m_medBayManager.IsMedBayAvailable())
             {
-                if(!IsAtMedBay()) FindFreeMedBay();
+                m_inTrasitionToMedBay = true;
             }
-            else
+
+            if (IsObstacleAround() && !m_inTrasitionToMedBay)
             {
-                if (!m_inHealingProcess)
-                {
-                    Wait();
-                }
+                m_navMeshAgent.isStopped = true;
+            }
+            else if (!IsObstacleAround() && !m_inTrasitionToMedBay)
+            {
+                Wait();
             }
         }
-        else
+
+        if (m_inTrasitionToMedBay && !IsAtMedBay())
         {
-            m_inHealingProcess = false;
+            FindFreeMedBay();
+
+        }
+
+        if(IsAtMedBay() && m_freeMedBay)
+        {
+            if (Vector3.Distance(transform.position, m_freeMedBay.transform.position) < .1f) m_navMeshAgent.isStopped = true;
+        }
+
+        if(m_isHealed)
+        {
+            m_inTrasitionToMedBay = false;
             m_navMeshAgent.SetDestination(m_medBayManager.GetExitPoint());
             m_navMeshAgent.isStopped = false;
         }
     }
     private bool IsObstacleAround()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, m_obstacleCheckRadius);
+        Vector3 aheadPosition = transform.position + transform.forward * 2f;
+
+        Collider[] colliders = Physics.OverlapSphere(aheadPosition, m_obstacleCheckRadius);
 
         foreach (Collider collider in colliders)
         {
-            if (collider.TryGetComponent<PatientController>(out PatientController _patient))
+            if (collider.TryGetComponent<PatientController>(out PatientController _patient)
+                && collider != this.GetComponent<Collider>())
             {
                 return true; // Obstacle detected
             }
@@ -60,7 +78,6 @@ public class PatientController : MonoBehaviour
         {
             if (collider.TryGetComponent<MedBayController>(out MedBayController _medBay))
             {
-                m_inHealingProcess = true;
                 return true; // MedBay detected
             }
         }
@@ -80,26 +97,19 @@ public class PatientController : MonoBehaviour
 
     private void FindFreeMedBay()
     {
-        MedBayController freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
-        if (freeMedBay != null)
+        m_freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
+        if (m_freeMedBay != null)
         {
-            m_navMeshAgent.SetDestination(freeMedBay.transform.position);
-            m_navMeshAgent.isStopped = false;
-            return;
+            SetDestination(m_freeMedBay.transform);
+            m_freeMedBay.m_IsMedbayOccupied = true;
+            Debug.Log("Assigned " + m_freeMedBay + " to " + this.gameObject);
         }
     }
 
     //TODO: Waiting doesnt Happen in line at equal distance gap. Fix the Logic Please
     private void Wait()
     {
-        if (IsObstacleAround())
-        {
-            m_navMeshAgent.isStopped = true;
-        }
-        else
-        {
-            m_navMeshAgent.SetDestination(m_medBayManager.GetWaitPoint());
-            m_navMeshAgent.isStopped = false;
-        }
+        m_navMeshAgent.SetDestination(m_medBayManager.GetWaitPoint());
+        m_navMeshAgent.isStopped = false;
     }
 }
