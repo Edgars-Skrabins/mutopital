@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     public float m_SpawnRate = 1f; //Spawn Rate in Seconds
     public int m_MaxAgentsCount = 5;
 
-    [SerializeField] private AgentManager m_agentManager;
+    [SerializeField] private Transform m_target;
     [SerializeField] private List<SpawnAgent> m_spawnAgentPrefabs;
     [SerializeField] private Transform m_spawnPoint;
     private float m_currentTime = 0;
@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        m_currentAgentsCount = m_agentManager.m_currentAgents.Count;
+        m_currentAgentsCount = m_spawnPoint.childCount;
 
         if (m_currentAgentsCount < m_MaxAgentsCount)
         {
@@ -46,7 +46,7 @@ public class SpawnManager : MonoBehaviour
 
             spawnedAgent.transform.SetParent(m_spawnPoint);
 
-            m_agentManager.m_currentAgents.Add(spawnedAgent.GetComponent<NavMeshAgent>());
+            spawnedAgent.GetComponent<NavMeshAgent>().SetDestination(m_target.position);
         }
     }
 }
