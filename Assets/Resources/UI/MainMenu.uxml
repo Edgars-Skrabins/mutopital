@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/Syles.uss?fileID=7433441132597879392&amp;guid=9e31ee9edc589476f9accedefb87df84&amp;type=3#Syles" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(73, 53, 120); cursor: initial; transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s;">
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="button" style="cursor: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&amp;guid=c867934f37d1641e69229e4bf49c4bed&amp;type=3#arrow-down&apos;);" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="button" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="button" />
+    </ui:VisualElement>
+</ui:UXML>
