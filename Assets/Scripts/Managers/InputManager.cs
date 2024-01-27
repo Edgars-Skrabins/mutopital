@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
@@ -12,8 +13,42 @@ public class InputManager : Singleton<InputManager>
         Initialize();
     }
 
+    private void OnEnable()
+    {
+        SubscribeEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnSubscribeEvents();
+    }
+
+    private void SubscribeEvents()
+    {
+        EventManager.I.OnGamePaused += HideCursor;
+        EventManager.I.OnGameUnPaused += UnHideCursor;
+    }
+
+    private void UnSubscribeEvents()
+    {
+        EventManager.I.OnGamePaused -= HideCursor;
+        EventManager.I.OnGameUnPaused -= UnHideCursor;
+    }
+
+    private void HideCursor()
+    {
+        Cursor.visible = false;
+    }
+
+    private void UnHideCursor()
+    {
+        Cursor.visible = true;
+    }
+
     private void Initialize()
     {
+        HideCursor();
+        InitializeInputActions();
     }
 
     private void InitializeInputActions()
