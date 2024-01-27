@@ -15,13 +15,6 @@ public class Settings : Singleton<Settings>
     //[SerializeField] private TMP_Text versionTxt;
     private void Start()
     {
-
-
-        if (PlayerPrefs.GetFloat("Sens") == 0)
-        {
-            SetRes();
-            ResetSettings();
-        }
         GetSettings();
         //PlayerPref get then set all values for audio
         //versionTxt.text = Application.version;
@@ -42,8 +35,6 @@ public class Settings : Singleton<Settings>
 
     public void ResetSettings()
     {
-
-        SetSens(300);
         SetMastVol(0);
         SetMusicVol(0);
         SetSfxVol(0);
@@ -57,7 +48,6 @@ public class Settings : Singleton<Settings>
         audioMixer.SetFloat("Music", PlayerPrefs.GetFloat("Music"));
         audioMixer.SetFloat("Sfx", PlayerPrefs.GetFloat("Sfx"));
         audioMixer.SetFloat("UI", PlayerPrefs.GetFloat("UI"));
-        sliders[0].value = PlayerPrefs.GetFloat("Sens");
         /*if (PlayerPrefs.GetInt("UIToggle") == 0)
         {
             toggle.isOn = false;
@@ -93,12 +83,6 @@ public class Settings : Singleton<Settings>
         audioMixer.SetFloat("UI", volume);
         PlayerPrefs.SetFloat("UI", volume);
         sliders[4].value = PlayerPrefs.GetFloat("UI");
-    }
-
-    public void SetSens(float sens)
-    {
-        PlayerPrefs.SetFloat("Sens", sens);
-        sliders[0].value = PlayerPrefs.GetFloat("Sens");
     }
     #endregion
 
