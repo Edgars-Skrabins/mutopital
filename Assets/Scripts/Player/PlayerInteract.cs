@@ -5,11 +5,9 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private Transform m_interactCenter;
     [SerializeField] private float m_interactRange;
-    [CanBeNull] private Interactable m_currentInteractable;
-
     private float m_currentInteractableDistance;
+    [CanBeNull] private Interactable m_currentInteractable;
     [CanBeNull] private Transform m_currentInteractableTF;
-
 
     private void Update()
     {
