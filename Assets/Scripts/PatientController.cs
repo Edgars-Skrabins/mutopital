@@ -1,41 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PatientController : MonoBehaviour
 {
+    [SerializeField] private bool m_isHealed;
+    [SerializeField] private float m_obstacleCheckRadius = 2f;
+    private NavMeshAgent m_navMeshAgent;
 
-    private NavMeshAgent m_navmeshAgent;
-    [SerializeField] private float obstacleCheckRadius = 2f;
-
-    void Start()
+    private void Start()
     {
-        m_navmeshAgent = GetComponent<NavMeshAgent>();
+        m_navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        // Check if there is an obstacle (another agent) within the specified radius
         if (IsObstacleAround())
         {
-            // Stop the agent when an obstacle is detected
-            m_navmeshAgent.isStopped = true;
+            m_navMeshAgent.isStopped = true;
         }
         else
         {
-            // Continue moving towards the target when no obstacle is around
-            m_navmeshAgent.isStopped = false;
+            m_navMeshAgent.isStopped = false;
         }
     }
 
     private bool IsObstacleAround()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, obstacleCheckRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, m_obstacleCheckRadius);
 
         foreach (Collider collider in colliders)
         {
+            // TODO: Can use TryGetComponent here instead
             if (collider.GetComponent<NavMeshAgent>() && collider != GetComponent<Collider>())
             {
                 return true; // Obstacle detected
@@ -47,7 +43,7 @@ public class PatientController : MonoBehaviour
 
     public void SetDestination(Transform _target)
     {
-        m_navmeshAgent.SetDestination(_target.position);
-        m_navmeshAgent.isStopped = false;
+        m_navMeshAgent.SetDestination(_target.position);
+        m_navMeshAgent.isStopped = false;
     }
 }

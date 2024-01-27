@@ -21,7 +21,7 @@ public class MedBayController : MonoBehaviour
     {
         if(m_occupant!= null)
         {
-        m_occupant.SetDestination(m_exitBayTF);
+            m_occupant.SetDestination(m_exitBayTF);
         }
         else
         {
