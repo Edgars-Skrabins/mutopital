@@ -34,11 +34,6 @@ public class GameManager : Singleton<GameManager>
     {
     }
 
-    public bool IsGamePaused()
-    {
-        return m_isGamePaused;
-    }
-
     private void PauseGame()
     {
         m_isGamePaused = true;
@@ -47,5 +42,15 @@ public class GameManager : Singleton<GameManager>
     private void UnPauseGame()
     {
         m_isGamePaused = false;
+    }
+
+    public bool IsGamePaused()
+    {
+        return m_isGamePaused;
+    }
+
+    public void LoseGame()
+    {
+        PauseGame();
     }
 }
