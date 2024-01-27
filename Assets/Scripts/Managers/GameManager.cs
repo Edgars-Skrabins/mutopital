@@ -37,11 +37,13 @@ public class GameManager : Singleton<GameManager>
     public void PauseGame()
     {
         m_isGamePaused = true;
+        EventManager.I.OnGamePaused_Invoke();
     }
 
     public void UnPauseGame()
     {
         m_isGamePaused = false;
+        EventManager.I.OnGameUnPaused_Invoke();
     }
 
     public bool IsGamePaused()
