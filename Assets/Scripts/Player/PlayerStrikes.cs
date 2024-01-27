@@ -1,4 +1,6 @@
-public class PlayerStrikes
+using UnityEngine;
+
+public class PlayerStrikes : MonoBehaviour
 {
     private int m_maxPlayerStrikesInclusive;
 
