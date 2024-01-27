@@ -11,7 +11,7 @@ public class Settings : Singleton<Settings>
     bool pauseActive = false;
     [SerializeField] public GameObject canvas;
     [SerializeField] private Slider[] sliders;
-    [SerializeField] private Toggle toggle;
+    //[SerializeField] private Toggle toggle;
     //[SerializeField] private TMP_Text versionTxt;
     private void Start()
     {
@@ -28,59 +28,8 @@ public class Settings : Singleton<Settings>
     }
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex != 0) { TogglePause(); }
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-
-    }
-
-    public void TogglePause()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 0) { return; }
-        if (pauseActive) //Unpause Game
-        {
-            PauseGame(false);
-        }
-        else //Pause Game
-        {
-
-            PauseGame(true);
-        }
-
-    }
 
 
-    public void PauseGame(bool pause)
-    {
-        if (pause)
-        {
-            pauseActive = true;
-            canvas.SetActive(true);
-            //animate pause opening
-            Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            pauseActive = false;
-            canvas.SetActive(false);
-            //Animate  pause closing
-            Time.timeScale = 1;
-            if (SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                Cursor.lockState = CursorLockMode.None;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-
-        }
-    }
 
     public void SetDisplayUI(bool UITogg)
     {
@@ -109,11 +58,11 @@ public class Settings : Singleton<Settings>
         audioMixer.SetFloat("Sfx", PlayerPrefs.GetFloat("Sfx"));
         audioMixer.SetFloat("UI", PlayerPrefs.GetFloat("UI"));
         sliders[0].value = PlayerPrefs.GetFloat("Sens");
-        if (PlayerPrefs.GetInt("UIToggle") == 0)
+        /*if (PlayerPrefs.GetInt("UIToggle") == 0)
         {
             toggle.isOn = false;
         }
-        else { toggle.isOn = true; }
+        else { toggle.isOn = true; }*/
     }
 
     #region Audio
@@ -187,7 +136,6 @@ public class Settings : Singleton<Settings>
     public void ResetLevel()
     {
 
-        PauseGame(false);
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -195,7 +143,6 @@ public class Settings : Singleton<Settings>
     public void SwitchScene(string sceneName)
     {
 
-        PauseGame(false);
         PlayerPrefs.Save();
         SceneManager.LoadScene(sceneName);
     }
