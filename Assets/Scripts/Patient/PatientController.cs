@@ -16,7 +16,6 @@ public class PatientController : MonoBehaviour
 
     private void Update()
     {
-
         if (!m_isHealed)
         {
             m_freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
@@ -90,16 +89,16 @@ public class PatientController : MonoBehaviour
         }
     }
 
+    //TODO: Waiting doesnt Happen in line at equal distance gap. Fix the Logic Please
     private void Wait()
     {
-        m_navMeshAgent.SetDestination(m_medBayManager.GetWaitPoint());
-
         if (IsObstacleAround())
         {
             m_navMeshAgent.isStopped = true;
         }
         else
         {
+            m_navMeshAgent.SetDestination(m_medBayManager.GetWaitPoint());
             m_navMeshAgent.isStopped = false;
         }
     }
