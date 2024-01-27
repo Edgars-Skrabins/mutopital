@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class Settings : Singleton<Settings>
 {
     private bool isWebGL;
-    private bool pauseActive = false;
     [SerializeField] public GameObject canvas;
     [SerializeField] private Slider[] sliders;
 
