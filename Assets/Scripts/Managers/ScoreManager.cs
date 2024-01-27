@@ -28,6 +28,26 @@ public class ScoreManager : Singleton<ScoreManager>
         PlayerPrefs.SetInt("HighScore", m_highScore);
     }
 
+    public void ClearScore()
+    {
+        m_score = 0;
+    }
+
+    public void IncreaseScore(int _incrementAmount)
+    {
+        m_score += _incrementAmount;
+        if (m_score > m_highScore)
+        {
+            UpdateHighScore(m_score);
+        }
+    }
+
+    private void UpdateHighScore(int _newHighScore)
+    {
+        m_highScore = _newHighScore;
+        PlayerPrefs.SetInt("HighScore", m_highScore);
+    }
+
     public int GetScore()
     {
         return m_score;
