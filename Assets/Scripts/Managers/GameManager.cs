@@ -34,12 +34,12 @@ public class GameManager : Singleton<GameManager>
     {
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         m_isGamePaused = true;
     }
 
-    private void UnPauseGame()
+    public void UnPauseGame()
     {
         m_isGamePaused = false;
     }
