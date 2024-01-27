@@ -1,15 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
     private InputActions m_inputActions;
-    private InputAction m_playerInteractIA;
 
+    private InputAction m_playerInteractIA;
     private InputAction m_playerMovementIA;
 
     protected override void Awake()
     {
+        base.Awake();
         Initialize();
     }
 
@@ -22,6 +24,8 @@ public class InputManager : Singleton<InputManager>
     {
         UnSubscribeEvents();
     }
+
+    public event Action OnInteractPerformed;
 
     private void SubscribeEvents()
     {
@@ -49,6 +53,7 @@ public class InputManager : Singleton<InputManager>
     {
         HideCursor();
         InitializeInputActions();
+        InitializeInputEvents();
     }
 
     private void InitializeInputActions()
@@ -61,5 +66,27 @@ public class InputManager : Singleton<InputManager>
 
         m_playerInteractIA = m_inputActions.Player.Interact;
         m_playerInteractIA.Enable();
+    }
+
+    private void InitializeInputEvents()
+    {
+        m_playerInteractIA.performed += Interact_Action;
+    }
+
+    private void Interact_Action(InputAction.CallbackContext _inputCtx)
+    {
+        switch (_inputCtx.phase)
+        {
+            case InputActionPhase.Performed:
+                OnInteractPerformed?.Invoke();
+                break;
+            default: return;
+        }
+    }
+
+    public Vector2 GetMovementVector2Normalized()
+    {
+        Vector2 movement = m_playerMovementIA.ReadValue<Vector2>();
+        return movement;
     }
 }
