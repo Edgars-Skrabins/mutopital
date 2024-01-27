@@ -1,16 +1,17 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 //using TMPro;
 
 public class Settings : Singleton<Settings>
 {
-    bool isWebGL;
-    bool pauseActive = false;
+    private bool isWebGL;
+    private bool pauseActive = false;
     [SerializeField] public GameObject canvas;
     [SerializeField] private Slider[] sliders;
+
     //[SerializeField] private Toggle toggle;
     //[SerializeField] private TMP_Text versionTxt;
     private void Start()
@@ -20,17 +21,9 @@ public class Settings : Singleton<Settings>
         //versionTxt.text = Application.version;
     }
 
-
-
-
-
-    public void SetDisplayUI(bool UITogg)
+    private void SetDisplayUI(bool UIToggle)
     {
-        if (UITogg)
-        {
-            PlayerPrefs.SetInt("UIToggle", 1);
-        }
-        else { PlayerPrefs.SetInt("UIToggle", 0); }
+        PlayerPrefs.SetInt("UIToggle", UIToggle ? 1 : 0);
     }
 
     public void ResetSettings()
@@ -65,12 +58,14 @@ public class Settings : Singleton<Settings>
         PlayerPrefs.SetFloat("Master", volume);
         sliders[1].value = PlayerPrefs.GetFloat("Master");
     }
+
     public void SetMusicVol(float volume)
     {
         audioMixer.SetFloat("Music", volume);
         PlayerPrefs.SetFloat("Music", volume);
         sliders[2].value = PlayerPrefs.GetFloat("Music");
     }
+
     public void SetSfxVol(float volume)
     {
         audioMixer.SetFloat("Sfx", volume);
@@ -84,25 +79,19 @@ public class Settings : Singleton<Settings>
         PlayerPrefs.SetFloat("UI", volume);
         sliders[4].value = PlayerPrefs.GetFloat("UI");
     }
+
     #endregion
 
     #region Application Settings
 
     public void GetPlatform()
     {
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            isWebGL = true;
-        }
-        else
-        {
-            isWebGL = false;
-        }
+        isWebGL = Application.platform == RuntimePlatform.WebGLPlayer;
     }
 
-    public void SetRes()
+    public void SetResolution()
     {
-        if (isWebGL)
+        if(isWebGL)
         {
             Screen.SetResolution(1280, 720, true);
         }
@@ -119,14 +108,12 @@ public class Settings : Singleton<Settings>
 
     public void ResetLevel()
     {
-
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SwitchScene(string sceneName)
     {
-
         PlayerPrefs.Save();
         SceneManager.LoadScene(sceneName);
     }
