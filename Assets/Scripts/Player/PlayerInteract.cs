@@ -38,6 +38,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Interact()
     {
+        m_currentInteractable?.Interact();
     }
 
     private void HandleInteract()
@@ -70,7 +71,10 @@ public class PlayerInteract : MonoBehaviour
         if(m_currentInteractableTF)
         {
             m_currentInteractableDistance = Vector3.Distance(m_currentInteractableTF.position, m_interactCenter.position);
+            return;
         }
+
+        ClearInteractable();
     }
 
     private void CheckIfInteractableRange()
@@ -86,6 +90,7 @@ public class PlayerInteract : MonoBehaviour
         ClearInteractable();
         m_currentInteractable = _interactable;
         m_currentInteractableTF = _interactableTF;
+        m_currentInteractable?.EnableInteractGFX();
     }
 
     private void ClearInteractable()
