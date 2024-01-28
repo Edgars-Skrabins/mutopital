@@ -4,8 +4,40 @@ using UnityEngine;
 
 public class BasePotion : Interactable
 {
+    private Rigidbody m_rigidbody;
+    [SerializeField] private bool isPicked = false;
+
+    private void Awake()
+    {
+        m_rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (transform.parent != null)
+        {
+            m_rigidbody.isKinematic = true;
+        }
+        else
+        {
+            m_rigidbody.isKinematic = false;
+        }
+    }
+
     public override void Interact()
     {
-        transform.SetParent(FindObjectOfType<PlayerInteract>().transform);
+        PlayerInventory player = FindObjectOfType<PlayerInventory>();
+        if (!isPicked)
+        {
+            player.PickUpObject(this.transform);
+            isPicked = true;
+        }
+        else
+        {
+            isPicked = false;
+            transform.parent = null;
+            player.DropObject();
+        }
+
     }
 }
