@@ -104,7 +104,6 @@ public class PatientController : MonoBehaviour
         {
             SetDestination(m_freeMedBay.transform);
             m_freeMedBay.m_IsMedbayOccupied = true;
-            Debug.Log("Assigned " + m_freeMedBay + " to " + this.gameObject);
         }
     }
 
