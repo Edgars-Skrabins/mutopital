@@ -18,7 +18,7 @@ public class ScoreManager : Singleton<ScoreManager>
 
     private void InitializeHighScore()
     {
-        if (PlayerPrefs.HasKey("HighScore"))
+        if(PlayerPrefs.HasKey("HighScore"))
         {
             m_highScore = PlayerPrefs.GetInt("HighScore");
             return;
@@ -31,15 +31,18 @@ public class ScoreManager : Singleton<ScoreManager>
     public void ClearScore()
     {
         m_score = 0;
+        EventManager.I.OnScoreUpdate_Invoke(m_score);
     }
 
     public void IncreaseScore(int _incrementAmount)
     {
         m_score += _incrementAmount;
-        if (m_score > m_highScore)
+        if(m_score > m_highScore)
         {
             UpdateHighScore(m_score);
         }
+
+        EventManager.I.OnScoreUpdate_Invoke(m_score);
     }
 
     private void UpdateHighScore(int _newHighScore)

@@ -29,14 +29,14 @@ public abstract class Projectile : MonoBehaviour
         m_projectileRB.velocity = m_projectileTF.forward * m_projectileSpeed;
     }
 
-    private void OnCollisionEnter(Collision _collision)
+    private void OnTriggerEnter(Collider _collider)
     {
-        HandleCollision(_collision);
+        HandleCollision(_collider);
     }
 
-    private void HandleCollision(Collision _collision)
+    private void HandleCollision(Collider _collider)
     {
-        if(!_collision.collider.TryGetComponent(out PlayerStrikes playerStrikes)) return;
+        if(!_collider.TryGetComponent(out PlayerStrikes playerStrikes)) return;
 
         playerStrikes.StrikePlayer(m_projectileStrikeDamage);
         DestroyProjectile();
