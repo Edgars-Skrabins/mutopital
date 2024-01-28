@@ -52,7 +52,7 @@ public class MainMenuScrine : MonoBehaviour
         var settingsButton = new Button();
         settingsButton.AddToClassList("settingButton");
         settingsButton.text = "Settings";
-        settingsButton.clicked += OpenSettings;
+        
         
 
         var quitButton = new Button();
@@ -69,6 +69,7 @@ public class MainMenuScrine : MonoBehaviour
         menuContainer.Add(settingsContainer);
         container.Add(nameText);
         container.Add(startButton);
+        container.Add(settingsButton);
         container.Add(quitButton);
         
         
