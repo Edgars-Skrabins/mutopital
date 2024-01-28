@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasePotion : MonoBehaviour
+public class BasePotion : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.SetParent(FindObjectOfType<PlayerInteract>().transform);
     }
 }
