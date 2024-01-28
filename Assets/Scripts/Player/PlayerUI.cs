@@ -15,11 +15,15 @@ public class PlayerUI : MonoBehaviour
     private void SubscribeEvents()
     {
         InputManager.I.OnPausePerformed += HandlePause;
+        EventManager.I.OnGamePaused += ShowPauseMenu;
+        EventManager.I.OnGameUnPaused += HidePauseMenu;
     }
 
     private void UnSubscribeEvents()
     {
         InputManager.I.OnPausePerformed -= HandlePause;
+        EventManager.I.OnGamePaused -= ShowPauseMenu;
+        EventManager.I.OnGameUnPaused -= HidePauseMenu;
     }
 
     private void HandlePause()
@@ -31,5 +35,13 @@ public class PlayerUI : MonoBehaviour
         }
 
         GameManager.I.UnPauseGame();
+    }
+
+    private void ShowPauseMenu()
+    {
+    }
+
+    private void HidePauseMenu()
+    {
     }
 }
