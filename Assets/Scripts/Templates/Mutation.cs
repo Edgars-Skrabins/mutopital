@@ -16,6 +16,7 @@ public abstract class Mutation : MonoBehaviour
     private void OnEnable()
     {
         Initialize();
+        EnableEffects();
     }
 
     private void OnDisable()
@@ -55,6 +56,7 @@ public abstract class Mutation : MonoBehaviour
         if(m_effectTimer >= m_effectFrequency - m_warningDuration)
         {
             ShowWarning();
+            return;
         }
 
         HideWarning();
