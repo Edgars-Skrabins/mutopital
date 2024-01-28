@@ -7,6 +7,9 @@ public class SpawnAgent
 {
     public string name;
     public int id;
+    public Color patientColor;
+
+
 
     public GameObject prefab;
 }
@@ -56,9 +59,11 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnPatient()
     {
+        
         PatientController spawnedAgent = Instantiate(m_spawnAgentPrefabs[Random.Range(0, m_spawnAgentPrefabs.Count)].prefab,
                 m_spawnPoint.position, Quaternion.identity).GetComponent<PatientController>();
 
+        spawnedAgent.SetPatientMutationColor(spawnedAgent.GetComponent<Renderer>());
         spawnedAgent.SetDestination(m_target);
         spawnedAgent.m_medBayManager = m_medBayManager;
     }

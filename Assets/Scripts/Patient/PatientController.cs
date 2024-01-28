@@ -137,4 +137,16 @@ public class PatientController : MonoBehaviour
     {
         m_navMeshAgent.speed *= _multiplier;
     }
+
+    public void SetPatientMutationColor(Renderer rend)
+    {
+        rend = GetComponent<Renderer>();
+        
+        Color displayColor = new Color(
+            Random.Range(0f, 1f),
+            Random.Range(0f, 1f),
+            Random.Range(0f, 1f));
+
+        rend.material.color = displayColor;
+    }
 }

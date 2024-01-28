@@ -46,7 +46,7 @@ public class Settings : Singleton<Settings>
         }
         else { toggle.isOn = true; }*/
     }
-
+    
     #region Audio
 
     public AudioMixer audioMixer;
@@ -80,7 +80,7 @@ public class Settings : Singleton<Settings>
     }
 
     #endregion
-
+    
     #region Application Settings
 
     public void GetPlatform()
