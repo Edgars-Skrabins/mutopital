@@ -3,9 +3,9 @@ using UnityEngine;
 public abstract class Mutation : MonoBehaviour
 {
     [SerializeField] protected GameObject m_mutationGFX;
-    [SerializeField] protected bool m_canShootEffects;
+    private bool m_canShootEffects;
     [SerializeField] protected GameObject m_effectWarningGFX;
-    [SerializeField] private float m_warningDuration;
+    [SerializeField] private float m_warningDuration = 1;
     [SerializeField] protected Transform m_effectSpawnRotation;
     [SerializeField] protected Transform m_effectSpawnLocation;
     [SerializeField] protected GameObject m_effectPrefab;
