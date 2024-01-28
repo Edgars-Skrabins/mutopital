@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_interactCenter: {fileID: 8639878970010702282}
-  m_interactRange: 10
+  m_interactRange: 2
 --- !u!114 &8535164080322966727
 MonoBehaviour:
   m_ObjectHideFlags: 0

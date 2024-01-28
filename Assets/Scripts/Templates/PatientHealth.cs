@@ -11,8 +11,18 @@ public abstract class PatientHealth : MonoBehaviour
         m_healthSlider.value = m_healthValue;
     }
 
+    protected virtual void MaxHealth()
+    {
+        m_healthValue = 100f;
+    }
+
     protected virtual void Die()
     {
         Destroy(gameObject);
+    }
+
+    protected virtual float GetHealth()
+    {
+        return m_healthValue;
     }
 }

@@ -64,6 +64,8 @@ public class PatientController : MonoBehaviour
         {
             m_stats.SetPatienceLevel(0);
         }
+
+        m_isHealed = m_stats.IsHealed();
     }
 
     private bool IsObstacleAround()

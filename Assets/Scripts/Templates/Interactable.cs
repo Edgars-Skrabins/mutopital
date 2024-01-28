@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] protected GameObject m_interactGFX;
+
     public abstract void Interact();
 
     public virtual void EnableInteractGFX()
@@ -12,6 +13,6 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void DisableInteractGFX()
     {
-        m_interactGFX.SetActive(true);
+        m_interactGFX.SetActive(false);
     }
 }

@@ -26,8 +26,23 @@ public class PatientStats : PatientHealth
     {
         return m_patienceLevel;
     }
+
     public void SetPatienceLevel(float _value)
     {
         m_patienceLevel = _value;
+    }
+
+    public void Heal()
+    {
+        MaxHealth();
+    }
+
+    public bool IsHealed()
+    {
+        if (GetHealth() >= 100f)
+        {
+            return true;
+        }
+        return false;
     }
 }
