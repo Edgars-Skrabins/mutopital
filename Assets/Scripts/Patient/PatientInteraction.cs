@@ -22,7 +22,7 @@ public class PatientInteraction : Interactable
 
         foreach (Collider collider in colliders)
         {
-            if (collider.GetComponent<BasePotion>())
+            if (collider.GetComponent<Potion>())
             {
                 Destroy(gameObject);
                 return true; // Potion detected
