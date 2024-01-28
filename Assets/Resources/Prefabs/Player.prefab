@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2679422947637187293}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 884714407343485946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 5136399362896364468}
   - component: {fileID: 8535164080322966727}
   - component: {fileID: 422437368417192224}
+  - component: {fileID: 1593428651827037073}
   - component: {fileID: 413466705056814459}
   m_Layer: 0
   m_Name: Player
@@ -186,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_interactCenter: {fileID: 8639878970010702282}
-  m_interactRange: 2
+  m_interactRange: 4
 --- !u!114 &8535164080322966727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4623a13be7c4a1eadac1c9b759cc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: 3
+  m_moveSpeed: 4
   m_playerRB: {fileID: 413466705056814459}
 --- !u!114 &422437368417192224
 MonoBehaviour:
@@ -213,6 +214,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44033c133615944e8a360e7a35bc1411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1593428651827037073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554343128682000034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3039437e67a6847ae93f4205f2dfe691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_handTF: {fileID: 2679422947637187293}
+  m_objectsInHand: {fileID: 0}
 --- !u!54 &413466705056814459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -238,7 +253,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &8216750932217382553
 GameObject:

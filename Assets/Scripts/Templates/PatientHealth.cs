@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public abstract class PatientHealth : MonoBehaviour
 {
-    [SerializeField] private float m_healthValue = 50f;
+    [SerializeField] private float m_healthValue = 0.01f;
     [SerializeField] private Slider m_healthSlider;
 
     protected virtual void UpdateHealth()

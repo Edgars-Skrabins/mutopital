@@ -143,9 +143,9 @@ public class PatientController : MonoBehaviour
         rend = GetComponent<Renderer>();
         
         Color displayColor = new Color(
-            Random.Range(0f, 1f),
-            Random.Range(0f, 1f),
-            Random.Range(0f, 1f));
+            Random.Range(0, 2),
+            Random.Range(0, 2),
+            Random.Range(0, 2));
 
         rend.material.color = displayColor;
     }
