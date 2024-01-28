@@ -6,8 +6,13 @@ public class InputManager : Singleton<InputManager>
 {
     private InputActions m_inputActions;
 
+    public event Action OnInteractPerformed;
     private InputAction m_playerInteractIA;
+
     private InputAction m_playerMovementIA;
+
+    public event Action OnPausePerformed;
+    private InputAction m_playerPauseIA;
 
     protected override void Awake()
     {
@@ -24,8 +29,6 @@ public class InputManager : Singleton<InputManager>
     {
         UnSubscribeEvents();
     }
-
-    public event Action OnInteractPerformed;
 
     private void SubscribeEvents()
     {
@@ -66,19 +69,34 @@ public class InputManager : Singleton<InputManager>
 
         m_playerInteractIA = m_inputActions.Player.Interact;
         m_playerInteractIA.Enable();
+
+        m_playerPauseIA = m_inputActions.Player.Pause;
+        m_playerPauseIA.Enable();
     }
 
     private void InitializeInputEvents()
     {
         m_playerInteractIA.performed += Interact_Action;
+        m_playerPauseIA.performed += Pause_Action;
     }
 
     private void Interact_Action(InputAction.CallbackContext _inputCtx)
     {
-        switch (_inputCtx.phase)
+        switch(_inputCtx.phase)
         {
             case InputActionPhase.Performed:
                 OnInteractPerformed?.Invoke();
+                break;
+            default: return;
+        }
+    }
+
+    private void Pause_Action(InputAction.CallbackContext _inputCtx)
+    {
+        switch(_inputCtx.phase)
+        {
+            case InputActionPhase.Performed:
+                OnPausePerformed?.Invoke();
                 break;
             default: return;
         }
