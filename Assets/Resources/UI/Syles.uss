@@ -14,7 +14,7 @@
     --c-t-button: var(--c-text-secondary);
     --br-button: 8px;
     --p-button: 6px 0;
-
+    
 }
 
 * {
@@ -22,11 +22,26 @@
 }
 
 VisualElement {
-    align-items: flex-start;
-    background-color: var(--c-ternary);
+
+}
+.menuContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.settingsContainer{
+    background-color: var(--c-secondary);
+    height: 100%;
+    width: 15%;
+
 }
 
 .container{
+    background-color: var(--c-ternary);
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -57,4 +72,8 @@ Button:hover{
 
 Button:active{
     background-color: var(--c-bg-button-active);
+    
 }
+
+
+    

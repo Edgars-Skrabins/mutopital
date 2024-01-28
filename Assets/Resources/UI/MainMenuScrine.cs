@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +37,9 @@ public class MainMenuScrine : MonoBehaviour
 
         var container = new VisualElement();
         container.AddToClassList("container");
+        
+        var menuContainer = new VisualElement();
+        menuContainer.AddToClassList("menuContainer");
 
         var nameText = new TextElement();
         nameText.AddToClassList("nameText");
@@ -48,15 +52,31 @@ public class MainMenuScrine : MonoBehaviour
         var settingsButton = new Button();
         settingsButton.AddToClassList("settingButton");
         settingsButton.text = "Settings";
+        settingsButton.clicked += OpenSettings;
         
+
         var quitButton = new Button();
         quitButton.AddToClassList("quitButton");
         quitButton.text = "Quit";
+
+        var settingsContainer = new VisualElement();
+        settingsContainer.AddToClassList("settingsContainer");
         
-        root.Add(container);
+        
+        
+        root.Add(menuContainer);
+        menuContainer.Add(container);
+        menuContainer.Add(settingsContainer);
         container.Add(nameText);
         container.Add(startButton);
-        container.Add(settingsButton);
         container.Add(quitButton);
+        
+        
     }
+    void OpenSettings()
+    {
+        
+     
+    }
+    
 }
