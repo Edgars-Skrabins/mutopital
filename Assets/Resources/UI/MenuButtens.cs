@@ -6,8 +6,6 @@ public class MenuButtens : MonoBehaviour
 {
     private void Update()
     {
-        add
     }
-    
-    
+
 }
