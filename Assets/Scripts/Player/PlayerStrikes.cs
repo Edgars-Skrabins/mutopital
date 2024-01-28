@@ -9,10 +9,12 @@ public class PlayerStrikes : MonoBehaviour
     public void StrikePlayer(int _strikeDamageAmount)
     {
         m_playerStrikes -= _strikeDamageAmount;
-        if (m_playerStrikes >= m_maxPlayerStrikesInclusive)
+        if(m_playerStrikes >= m_maxPlayerStrikesInclusive)
         {
             KillPlayer();
         }
+
+        EventManager.I.OnPlayerStrike_Invoke(m_playerStrikes);
     }
 
     private void KillPlayer()

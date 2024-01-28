@@ -87,7 +87,7 @@ public abstract class Mutation : MonoBehaviour
         }
     }
 
-    public virtual void FireEffect()
+    protected virtual void FireEffect()
     {
         Instantiate(m_effectPrefab, m_effectSpawnLocation.position, m_effectSpawnRotation.rotation);
     }

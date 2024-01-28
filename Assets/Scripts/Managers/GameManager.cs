@@ -20,14 +20,12 @@ public class GameManager : Singleton<GameManager>
 
     private void SubscribeEvents()
     {
-        EventManager.I.OnGamePaused += PauseGame;
-        EventManager.I.OnGameUnPaused += UnPauseGame;
+
     }
 
     private void UnSubscribeEvents()
     {
-        EventManager.I.OnGamePaused -= PauseGame;
-        EventManager.I.OnGameUnPaused -= UnPauseGame;
+
     }
 
     private void Initialize()
