@@ -129,10 +129,10 @@ Material:
     - _Metallic: 0
     - _Metallicness: 0
     - _NoiseScale: 14
-    - _NoiseSpeed: 0.12
+    - _NoiseSpeed: 0.54
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Power: 2
+    - _Power: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
@@ -147,7 +147,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - Color_e2229bc123e44e16acc0cd209d3999a9: {r: 33.89676, g: 1.5625083, b: 0, a: 1}
+    - Color_e2229bc123e44e16acc0cd209d3999a9: {r: 766.9961, g: 7.590737, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

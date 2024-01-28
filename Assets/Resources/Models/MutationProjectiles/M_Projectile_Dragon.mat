@@ -127,7 +127,7 @@ Material:
     - _Metallic: 0
     - _Metallicness: 0
     - _NoiseScale: 14
-    - _NoiseSpeed: 0.12
+    - _NoiseSpeed: 0.24
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0

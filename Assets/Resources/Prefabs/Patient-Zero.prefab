@@ -260,7 +260,7 @@ MonoBehaviour:
   m_warningDuration: 1
   m_effectSpawnRotation: {fileID: 4987225190928420138}
   m_effectSpawnLocation: {fileID: 4987225190928420138}
-  m_effectPrefab: {fileID: 8716235437898718736, guid: ed1882f151576ef489c2ab5788897b19, type: 3}
+  m_effectPrefab: {fileID: 3084221918592084509, guid: fd789e5afca9c4e9c87a056b5e71a473, type: 3}
   m_effectFrequency: 5
   m_healPotionName: Dragon
 --- !u!1 &3420998081483121044
