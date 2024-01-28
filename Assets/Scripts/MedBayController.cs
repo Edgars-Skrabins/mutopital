@@ -28,39 +28,29 @@ public class MedBayController : MonoBehaviour
                 m_IsMedbayOccupied = true;
                 return true; // Obstacle detected
             }
-
-            if(collider.GetComponent<Potion>() && m_occupant)
-            {
-                m_nearPotion = true;
-                m_occupant.Heal();
-            }
-            else
-            {
-                m_nearPotion = false;
-            }
         }
         m_occupant = null;
         return false; // No obstacle detected
     }
     private bool IsNearPotion()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, castRadius*1.5f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, castRadius * 3f);
 
         foreach (Collider collider in colliders)
         {
             if (collider.GetComponent<Potion>() && m_occupant)
             {
                 m_nearPotion = true;
-                return true; // Obstacle detected
+                return true; // Potion detected
             }
         }
         m_nearPotion = false;
-        return false; // No obstacle detected
+        return false; // No Potion detected
     }
 
     private void Update()
     {
         if(IsMedbayOccupied() && IsNearPotion())
-        m_occupant.Heal();
+            m_occupant.Heal();
     }
 }
