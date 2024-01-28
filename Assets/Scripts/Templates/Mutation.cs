@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Mutation : MonoBehaviour
 {
+    [SerializeField] protected GameObject m_mutationGFX;
     [SerializeField] protected Transform m_effectSpawnRotation;
     [SerializeField] protected Transform m_effectSpawnLocation;
     [SerializeField] protected GameObject m_effectPrefab;
