@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UISetting : MonoBehaviour
+public class QualitySettingExample : MonoBehaviour
 {
     private void Update()
     {
