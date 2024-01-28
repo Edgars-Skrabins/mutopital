@@ -3,6 +3,9 @@ using UnityEngine;
 public abstract class Mutation : MonoBehaviour
 {
     [SerializeField] protected GameObject m_mutationGFX;
+    [SerializeField] protected bool m_canShootEffects;
+    [SerializeField] protected GameObject m_effectWarningGFX;
+    [SerializeField] private float m_warningDuration;
     [SerializeField] protected Transform m_effectSpawnRotation;
     [SerializeField] protected Transform m_effectSpawnLocation;
     [SerializeField] protected GameObject m_effectPrefab;
@@ -32,13 +35,39 @@ public abstract class Mutation : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(!m_canShootEffects)
+        {
+            return;
+        }
+
         CountEffectTimer();
         HandleEffect();
+    }
+
+    public void EnableEffects()
+    {
+        m_canShootEffects = true;
     }
 
     private void CountEffectTimer()
     {
         m_effectTimer += Time.deltaTime;
+        if(m_effectTimer >= m_effectFrequency - m_warningDuration)
+        {
+            ShowWarning();
+        }
+
+        HideWarning();
+    }
+
+    private void ShowWarning()
+    {
+        m_effectWarningGFX.SetActive(true);
+    }
+
+    private void HideWarning()
+    {
+        m_effectWarningGFX.SetActive(false);
     }
 
     private void ResetTimer()
