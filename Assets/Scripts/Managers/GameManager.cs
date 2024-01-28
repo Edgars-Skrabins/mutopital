@@ -20,16 +20,24 @@ public class GameManager : Singleton<GameManager>
 
     private void SubscribeEvents()
     {
-
+        InputManager.I.OnPausePerformed += HandlePause;
     }
 
     private void UnSubscribeEvents()
     {
-
+        InputManager.I.OnPausePerformed += HandlePause;
     }
 
     private void Initialize()
     {
+    }
+
+    private void HandlePause()
+    {
+        if (m_isGamePaused)
+            UnPauseGame();
+        else
+            PauseGame();
     }
 
     public void PauseGame()

@@ -60,9 +60,11 @@ public class PlayerUI : MonoBehaviour
         if(GameManager.I.IsGamePaused())
         {
             GameManager.I.PauseGame();
+            Debug.Log("Game Paused");
             return;
         }
 
+        Debug.Log(GameManager.I + " Game Unpaused");
         GameManager.I.UnPauseGame();
     }
 
