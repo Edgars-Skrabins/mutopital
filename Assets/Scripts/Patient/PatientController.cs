@@ -8,7 +8,9 @@ public class PatientController : MonoBehaviour
 
     [SerializeField] private bool m_isHealed;
     [SerializeField] private float m_obstacleCheckRadius = 2f;
+
     private NavMeshAgent m_navMeshAgent;
+    [SerializeField] private PatientStats m_stats;
     [SerializeField] private MedBayController m_freeMedBay;
 
     private void Awake()
@@ -18,6 +20,11 @@ public class PatientController : MonoBehaviour
 
     private void Update()
     {
+        if(!m_isHealed && !m_inTrasitionToMedBay)
+        {
+            m_stats.SetPatienceLevel(m_stats.GetPatienceLevel() - Time.deltaTime);
+        }
+
         if (!m_isHealed)
         {
             if (Vector3.Distance(transform.position, m_medBayManager.GetWaitPoint()) < .1f
@@ -47,11 +54,14 @@ public class PatientController : MonoBehaviour
             if (Vector3.Distance(transform.position, m_freeMedBay.transform.position) < .1f) m_navMeshAgent.isStopped = true;
         }
 
-        if(m_isHealed)
+        if(m_isHealed || m_stats.GetPatienceLevel() <= 0)
         {
-            m_inTrasitionToMedBay = false;
-            m_navMeshAgent.SetDestination(m_medBayManager.GetExitPoint());
-            m_navMeshAgent.isStopped = false;
+            Leave();
+
+        }
+            if(m_stats.GetPatienceLevel() <= 0)
+        {
+            m_stats.SetPatienceLevel(0);
         }
     }
     private bool IsObstacleAround()
@@ -106,10 +116,16 @@ public class PatientController : MonoBehaviour
         }
     }
 
-    //TODO: Waiting doesnt Happen in line at equal distance gap. Fix the Logic Please
     private void Wait()
     {
         m_navMeshAgent.SetDestination(m_medBayManager.GetWaitPoint());
+        m_navMeshAgent.isStopped = false;
+    }
+
+    private void Leave()
+    {
+        m_inTrasitionToMedBay = false;
+        m_navMeshAgent.SetDestination(m_medBayManager.GetExitPoint());
         m_navMeshAgent.isStopped = false;
     }
 }
