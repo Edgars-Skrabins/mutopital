@@ -59,11 +59,13 @@ public class PatientController : MonoBehaviour
             Leave();
 
         }
-            if(m_stats.GetPatienceLevel() <= 0)
+
+        if(m_stats.GetPatienceLevel() <= 0)
         {
             m_stats.SetPatienceLevel(0);
         }
     }
+
     private bool IsObstacleAround()
     {
         Vector3 aheadPosition = transform.position + transform.forward * 2f;
@@ -80,6 +82,7 @@ public class PatientController : MonoBehaviour
         }
         return false; // No obstacle detected
     }
+
     private bool IsAtMedBay()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, m_obstacleCheckRadius);
@@ -92,17 +95,6 @@ public class PatientController : MonoBehaviour
             }
         }
         return false; // No Medbay detected
-    }
-
-    public void SetMedBayManager(MedBayManager _medBayManager)
-    {
-        m_medBayManager = _medBayManager;
-    }
-
-    public void SetDestination(Transform _target)
-    {
-        m_navMeshAgent.SetDestination(_target.position);
-        m_navMeshAgent.isStopped = false;
     }
 
     private void FindFreeMedBay()
@@ -127,5 +119,21 @@ public class PatientController : MonoBehaviour
         m_inTrasitionToMedBay = false;
         m_navMeshAgent.SetDestination(m_medBayManager.GetExitPoint());
         m_navMeshAgent.isStopped = false;
+    }
+
+    public void SetMedBayManager(MedBayManager _medBayManager)
+    {
+        m_medBayManager = _medBayManager;
+    }
+
+    public void SetDestination(Transform _target)
+    {
+        m_navMeshAgent.SetDestination(_target.position);
+        m_navMeshAgent.isStopped = false;
+    }
+
+    public void UpdatePatientMoveSpeedMultiplier(float _multiplier)
+    {
+        m_navMeshAgent.speed *= _multiplier;
     }
 }
