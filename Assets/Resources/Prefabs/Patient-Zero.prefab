@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98918b30fdf844d2bec95de99d05cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_healthValue: 50
+  m_healthValue: 0.1
   m_healthSlider: {fileID: 9022153218675603388}
   m_patienceLevel: 100
 --- !u!114 &1334066219558057271
