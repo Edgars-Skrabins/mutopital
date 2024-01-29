@@ -53,6 +53,8 @@ public class PotionSpawner : MonoBehaviour
                 potion.SetPotionName("Snake");
             else if (m_potionType == PotionType.Taco)
                 potion.SetPotionName("Taco");
+
+            potion.transform.SetParent(m_spawnTransform);
         }
     }
 
