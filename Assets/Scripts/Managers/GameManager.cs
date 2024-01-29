@@ -33,6 +33,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Initialize()
     {
+        PauseGame();
     }
 
     private void HandlePause()
@@ -65,5 +66,6 @@ public class GameManager : Singleton<GameManager>
     public void LoseGame()
     {
         PauseGame();
+        EventManager.I.OnGameLoss_Invoke();
     }
 }
