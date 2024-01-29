@@ -9,9 +9,14 @@ public class PlayerInteract : MonoBehaviour
     [CanBeNull] private Interactable m_currentInteractable;
     [CanBeNull] private Transform m_currentInteractableTF;
 
-    private void Update()
+    private void Awake()
     {
-        HandleInteract();
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        m_currentInteractableDistance = m_interactRange;
     }
 
     private void OnEnable()
@@ -33,6 +38,12 @@ public class PlayerInteract : MonoBehaviour
     {
         InputManager.I.OnInteractPerformed -= Interact;
     }
+
+    private void Update()
+    {
+        HandleInteract();
+    }
+
 
     private void Interact()
     {
@@ -60,7 +71,12 @@ public class PlayerInteract : MonoBehaviour
         }
 
         UpdateInteractableDistance();
-        CheckIfInteractableRange();
+        CheckIfInteractableIsInRange();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(m_interactCenter.position, m_interactRange);
     }
 
     private void UpdateInteractableDistance()
@@ -74,7 +90,7 @@ public class PlayerInteract : MonoBehaviour
         ClearInteractable();
     }
 
-    private void CheckIfInteractableRange()
+    private void CheckIfInteractableIsInRange()
     {
         if(m_currentInteractableDistance > m_interactRange)
         {
