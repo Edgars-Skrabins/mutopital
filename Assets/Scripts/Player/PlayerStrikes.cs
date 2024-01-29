@@ -16,6 +16,11 @@ public class PlayerStrikes : MonoBehaviour
         EventManager.I.OnPlayerStrike_Invoke(m_playerStrikes);
     }
 
+    public int GetPlayerStrikes()
+    {
+        return m_playerStrikes;
+    }
+
     private void KillPlayer()
     {
         GameManager.I.LoseGame();

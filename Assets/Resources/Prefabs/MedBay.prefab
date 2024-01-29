@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_exitBayTF: {fileID: 0}
-  castRadius: 1.5
+  castRadius: 1
   m_occupant: {fileID: 0}
   m_medBayManager: {fileID: 0}
   m_IsMedbayOccupied: 0

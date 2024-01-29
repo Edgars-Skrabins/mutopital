@@ -20,6 +20,10 @@ public class PatientController : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.I.IsGamePaused())
+        {
+            return;
+        }
         if(!m_isHealed && !m_inTrasitionToMedBay)
         {
             m_stats.SetPatienceLevel(m_stats.GetPatienceLevel() - Time.deltaTime);
@@ -27,7 +31,7 @@ public class PatientController : MonoBehaviour
 
         if (!m_isHealed)
         {
-            if (Vector3.Distance(transform.position, m_medBayManager.GetWaitPoint()) < .1f
+            if (Vector3.Distance(transform.position, m_medBayManager.GetWaitPoint()) < .5f
                 && m_medBayManager.IsMedBayAvailable())
             {
                 m_inTrasitionToMedBay = true;
@@ -102,6 +106,7 @@ public class PatientController : MonoBehaviour
     private void FindFreeMedBay()
     {
         m_freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
+
         if (m_freeMedBay != null)
         {
             SetDestination(m_freeMedBay.transform);

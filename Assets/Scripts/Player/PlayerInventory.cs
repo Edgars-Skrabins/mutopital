@@ -10,6 +10,10 @@ public class PlayerInventory : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(GameManager.I.IsGamePaused())
+        {
+            return;
+        }
         if(m_objectsInHand)
             m_objectsInHand.position = m_handTF.position;
     }
@@ -33,8 +37,6 @@ public class PlayerInventory : MonoBehaviour
 
     public void DropObject()
     {
-        Debug.Log("Drop Object!");
-
         if (m_objectsInHand)
         {
             m_objectsInHand.DetachChildren();

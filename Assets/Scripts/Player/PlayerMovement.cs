@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.I.IsGamePaused())
+        {
+            return;
+        }
         InputManager.I.GetMovementVector2Normalized();
         HandleMovement();
     }

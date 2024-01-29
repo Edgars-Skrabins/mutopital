@@ -27,6 +27,8 @@ public class MedBayController : MonoBehaviour
                 m_occupant = collider.GetComponent<PatientStats>();
                 m_occupant.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
                 m_IsMedbayOccupied = true;
+                m_occupant.GetMutation().EnableMutationGFX();
+
                 return true; // Obstacle detected
             }
         }
