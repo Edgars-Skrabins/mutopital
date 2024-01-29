@@ -2819,7 +2819,6 @@ GameObject:
   - component: {fileID: 289413580}
   - component: {fileID: 289413579}
   - component: {fileID: 289413578}
-  - component: {fileID: 289413577}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -2842,25 +2841,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1193577347}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &289413577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289413575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_OverrideGenerateLinks: 0
-  m_GenerateLinks: 0
-  m_IgnoreFromBuild: 0
-  m_ApplyToChildren: 0
-  m_AffectedAgents: ffffffff
 --- !u!64 &289413578
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6020,7 +6000,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7484145617536099841, guid: 3112f8fed105d433aab650bbe6c7f22e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1190934587}
   m_SourcePrefab: {fileID: 100100000, guid: 3112f8fed105d433aab650bbe6c7f22e, type: 3}
 --- !u!1 &762521138
 GameObject:
@@ -9004,6 +8987,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0a16f7ebe2904649b6e1f5ecc0b5b41, type: 3}
   m_PrefabInstance: {fileID: 1187025566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1190934585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7484145617536099841, guid: 3112f8fed105d433aab650bbe6c7f22e, type: 3}
+  m_PrefabInstance: {fileID: 761953819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1190934587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190934585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1193577346
 GameObject:
   m_ObjectHideFlags: 0
@@ -10570,7 +10581,7 @@ MonoBehaviour:
   m_OverrideGenerateLinks: 0
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
-  m_ApplyToChildren: 1
+  m_ApplyToChildren: 0
   m_AffectedAgents: ffffffff
 --- !u!65 &1418169406
 BoxCollider:
