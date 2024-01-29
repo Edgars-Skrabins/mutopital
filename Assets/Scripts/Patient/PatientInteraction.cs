@@ -30,7 +30,7 @@ public class PatientInteraction : MonoBehaviour
 
     private void Update()
     {
-        if(IsNearPotion() && !m_potion.IsPicked())
+        if(IsNearPotion() && !m_potion.IsPicked() && m_potion.GetPotionName() == m_stats.GetMutation().GetActiveMutationName())
         {
             m_stats.GetMutation().AttemptRemoveMutation(m_potion.GetPotionName());
             m_stats.Heal();
