@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using Time = UnityEngine.Time;
 
 public class GameManager : Singleton<GameManager>
@@ -80,6 +81,7 @@ public class GameManager : Singleton<GameManager>
 
     public void LoseGame()
     {
+        SceneManager.LoadScene(0);
         PauseGame();
         EventManager.I.OnGameLoss_Invoke();
     }
