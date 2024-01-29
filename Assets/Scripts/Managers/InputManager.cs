@@ -44,12 +44,14 @@ public class InputManager : Singleton<InputManager>
 
     private void HideCursor()
     {
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
     }
 
     private void UnHideCursor()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Initialize()
