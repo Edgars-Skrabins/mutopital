@@ -33,8 +33,6 @@ public class PlayerInventory : MonoBehaviour
 
     public void DropObject()
     {
-        Debug.Log("Drop Object!");
-
         if (m_objectsInHand)
         {
             m_objectsInHand.DetachChildren();

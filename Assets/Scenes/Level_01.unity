@@ -5987,7 +5987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639878970010702282, guid: 3112f8fed105d433aab650bbe6c7f22e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.69
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8639878970010702282, guid: 3112f8fed105d433aab650bbe6c7f22e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6767,6 +6767,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 540309194}
     m_Modifications:
+    - target: {fileID: 1896829620086417475, guid: 2f8e161d1fab14df2b896106789966c4, type: 3}
+      propertyPath: m_potionType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2197688694652923469, guid: 2f8e161d1fab14df2b896106789966c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.67
@@ -10031,6 +10035,10 @@ PrefabInstance:
     - target: {fileID: 7165487233704406383, guid: 59276562d0fd4444283442fc150e609a, type: 3}
       propertyPath: m_Name
       value: Potion Spawner Snake
+      objectReference: {fileID: 0}
+    - target: {fileID: 7842625778465449311, guid: 59276562d0fd4444283442fc150e609a, type: 3}
+      propertyPath: m_potionType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8530880756034611427, guid: 59276562d0fd4444283442fc150e609a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13804,6 +13812,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 540309194}
     m_Modifications:
+    - target: {fileID: 268893563176368857, guid: bec375f8da0d34815ad534f81a4493ff, type: 3}
+      propertyPath: m_potionType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3735446777940350237, guid: bec375f8da0d34815ad534f81a4493ff, type: 3}
       propertyPath: m_Name
       value: Potion Spawner Taco
@@ -15217,7 +15229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897295789503879980, guid: f20f3a19f7e874ff6b52fe2fec03c015, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.37945
+      value: 7.18
       objectReference: {fileID: 0}
     - target: {fileID: 897295789503879980, guid: f20f3a19f7e874ff6b52fe2fec03c015, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15225,7 +15237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897295789503879980, guid: f20f3a19f7e874ff6b52fe2fec03c015, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.56
+      value: -8.75
       objectReference: {fileID: 0}
     - target: {fileID: 897295789503879980, guid: f20f3a19f7e874ff6b52fe2fec03c015, type: 3}
       propertyPath: m_LocalRotation.w
