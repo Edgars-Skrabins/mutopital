@@ -20,8 +20,8 @@ public class GenericTypeLeaderboard : MonoBehaviour
     * leaderboardKey can be the same between stage and live /development mode on/off.
     * So if you use the key instead of the ID, you don't need to change any code when switching development_mode.
     */
-    string leaderboardKey = "genericLeaderboard";
-    // int leaderboardID = 4705;
+    string leaderboardKey = "dev_70eb0e3469e24d5d90b04ce9a3f39a7d";
+    //int leaderboardID = 20051;
 
     string memberID;
 
@@ -48,7 +48,7 @@ public class GenericTypeLeaderboard : MonoBehaviour
             {
                 infoText.text = "Guest session started";
                 playerIDText.text = "Player ID:" + response.player_id.ToString();
-                memberID = response.player_id.ToString();
+                memberID = PlayerPrefs.GetString("Username");//response.player_id.ToString();
                 UpdateLeaderboardTop10();
                 //UpdateLeaderboardCentered();
             }
@@ -73,7 +73,7 @@ public class GenericTypeLeaderboard : MonoBehaviour
          * ensuring that every new score gets its' own post on the leaderboard.
          */
         string infiniteScores = memberID + GetAndIncrementScoreCharacters();
-        LootLockerSDKManager.SubmitScore(infiniteScores, int.Parse(scoreInputField.text), leaderboardKey, playerNameInputField.text, (response) =>
+        LootLockerSDKManager.SubmitScore(infiniteScores, PlayerPrefs.GetInt("LastScore"), leaderboardKey, PlayerPrefs.GetString("Username"), (response) =>
         {
             if (response.success)
             {
