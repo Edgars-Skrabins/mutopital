@@ -19,12 +19,12 @@ public abstract class Projectile : MonoBehaviour
         m_projectileTF = GetComponent<Transform>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         LaunchProjectile();
     }
 
-    private void LaunchProjectile()
+    protected virtual void LaunchProjectile()
     {
         m_projectileRB.velocity = m_projectileTF.forward * m_projectileSpeed;
     }
@@ -34,7 +34,7 @@ public abstract class Projectile : MonoBehaviour
         HandleCollision(_collider);
     }
 
-    private void HandleCollision(Collider _collider)
+    protected virtual void HandleCollision(Collider _collider)
     {
         if(!_collider.TryGetComponent(out PlayerStrikes playerStrikes)) return;
 
@@ -42,7 +42,7 @@ public abstract class Projectile : MonoBehaviour
         DestroyProjectile();
     }
 
-    private void DestroyProjectile()
+    protected void DestroyProjectile()
     {
         Destroy(gameObject);
     }
