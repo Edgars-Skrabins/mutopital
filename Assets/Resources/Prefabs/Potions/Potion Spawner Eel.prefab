@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnTransform: {fileID: 903692664835525842}
   m_spawnRate: 3
-  potionType: 1
+  m_potionType: 1
   m_potionPrefabs:
   - {fileID: 3802777962313782791, guid: e5e80f5dc6839e44eaa5354c5b432950, type: 3}
   - {fileID: 7556274299571040939, guid: ea4f332732dc2a04b8c66667eb0435be, type: 3}

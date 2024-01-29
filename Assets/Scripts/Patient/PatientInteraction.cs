@@ -34,7 +34,9 @@ public class PatientInteraction : MonoBehaviour
         {
             m_stats.GetMutation().AttemptRemoveMutation(m_potion.GetPotionName());
             m_stats.Heal();
+            m_stats.IsHealed();
             Destroy(m_potion.gameObject);
+            ScoreManager.I.IncreaseScore(10);
         }
     }
 }

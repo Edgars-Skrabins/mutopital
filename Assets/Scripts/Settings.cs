@@ -13,12 +13,12 @@ public class Settings : Singleton<Settings>
     [SerializeField] private Slider[] sliders;
 
     //[SerializeField] private Toggle toggle;
-    [SerializeField] private TMP_Text versionTxt;
+    //[SerializeField] private TMP_Text versionTxt;
     private void Start()
     {
         GetSettings();
         //PlayerPref get then set all values for audio
-        versionTxt.text = Application.version;
+        //versionTxt.text = Application.version;
     }
 
     private void SetDisplayUI(bool UIToggle)

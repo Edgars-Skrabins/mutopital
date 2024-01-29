@@ -24,7 +24,14 @@ public class PatientController : MonoBehaviour
         {
             return;
         }
-        if(!m_isHealed && !m_inTrasitionToMedBay)
+
+        if (m_isHealed || m_stats.GetPatienceLevel() <= 0)
+        {
+            Leave();
+
+        }
+
+        if (!m_isHealed && !m_inTrasitionToMedBay)
         {
             m_stats.SetPatienceLevel(m_stats.GetPatienceLevel() - Time.deltaTime);
         }
@@ -56,12 +63,6 @@ public class PatientController : MonoBehaviour
         if(IsAtMedBay() && m_freeMedBay)
         {
             if (Vector3.Distance(transform.position, m_freeMedBay.transform.position) < .1f) m_navMeshAgent.isStopped = true;
-        }
-
-        if(m_isHealed || m_stats.GetPatienceLevel() <= 0)
-        {
-            Leave();
-
         }
 
         if(m_stats.GetPatienceLevel() <= 0)
@@ -103,13 +104,22 @@ public class PatientController : MonoBehaviour
         return false; // No Medbay detected
     }
 
-    public void FindFreeMedBay()
+    private void FindFreeMedBay()
     {
         m_freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
-        m_freeMedBay.m_IsMedbayOccupied = true;
-        SetDestination(m_freeMedBay.transform);
+        if (m_freeMedBay)
+        {
+            m_freeMedBay.m_IsMedbayOccupied = true;
+            SetDestination(m_freeMedBay.transform);
+        }
     }
-
+    public void FindNewFreeMedBay()
+    {
+        MedBayController freeMedBay;
+        freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
+        freeMedBay.m_IsMedbayOccupied = true;
+        SetDestination(freeMedBay.transform);
+    }
     private void Wait()
     {
         m_navMeshAgent.SetDestination(m_medBayManager.GetWaitPoint());
