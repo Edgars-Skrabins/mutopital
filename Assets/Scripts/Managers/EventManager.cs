@@ -6,6 +6,8 @@ public class EventManager : Singleton<EventManager>
     public event Action OnGameUnPaused;
     public event Action<int> OnPlayerStrike;
     public event Action<int> OnScoreUpdate;
+    public event Action OnGameLose;
+
 
     public void OnGamePaused_Invoke()
     {
@@ -25,5 +27,10 @@ public class EventManager : Singleton<EventManager>
     public void OnScoreUpdate_Invoke(int _score)
     {
         OnScoreUpdate?.Invoke(_score);
+    }
+
+    public void OnGameLoss_Invoke()
+    {
+        OnGameLose?.Invoke();
     }
 }

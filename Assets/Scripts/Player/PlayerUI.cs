@@ -70,11 +70,19 @@ public class PlayerUI : MonoBehaviour
 
     private void ShowPauseMenu()
     {
+        if(!GameManager.I.HasGameStarted())
+        {
+            return;
+        }
         m_pauseMenu.SetActive(true);
     }
 
     private void HidePauseMenu()
     {
+        if(!GameManager.I.HasGameStarted())
+        {
+            return;
+        }
         m_pauseMenu.SetActive(false);
     }
 }

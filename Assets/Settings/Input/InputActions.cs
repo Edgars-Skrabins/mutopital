@@ -246,7 +246,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""dc7aea2e-094b-4550-969e-44f2b0dfe64e"",
-                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""path"": ""<XInputController>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -257,7 +257,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""7f2f0044-3436-4d40-aa19-b9911adcc426"",
-                    ""path"": ""<XInputController>/rightStick/right"",
+                    ""path"": ""<XInputController>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

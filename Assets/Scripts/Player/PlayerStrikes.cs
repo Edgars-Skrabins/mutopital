@@ -8,7 +8,7 @@ public class PlayerStrikes : MonoBehaviour
     public void StrikePlayer(int _strikeDamageAmount)
     {
         m_playerStrikes -= _strikeDamageAmount;
-        if(m_playerStrikes >= m_maxPlayerStrikesInclusive)
+        if(m_playerStrikes <= 0)
         {
             KillPlayer();
         }

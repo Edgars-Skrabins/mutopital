@@ -50,6 +50,10 @@ public class PlayerInteract : MonoBehaviour
 
     private void Interact()
     {
+        if(GameManager.I.IsGamePaused())
+        {
+            return;
+        }
         m_currentInteractable?.Interact();
     }
 
