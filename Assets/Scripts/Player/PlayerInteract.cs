@@ -44,7 +44,6 @@ public class PlayerInteract : MonoBehaviour
         HandleInteract();
     }
 
-
     private void Interact()
     {
         m_currentInteractable?.Interact();
@@ -52,9 +51,12 @@ public class PlayerInteract : MonoBehaviour
 
     private void HandleInteract()
     {
-        const int maxColliders = 30;
+        const int maxColliders = 20;
         Collider[] colliders = new Collider[maxColliders];
         int size = Physics.OverlapSphereNonAlloc(m_interactCenter.position, m_interactRange, colliders);
+
+        Interactable closestInteractable = null;
+        float distanceToCurrentInteractable = m_currentInteractableDistance;
 
         for(int i = 0; i < size; i++)
         {
@@ -63,11 +65,17 @@ public class PlayerInteract : MonoBehaviour
                 continue;
 
             float distanceToPlayer = Vector3.Distance(colliderTF.position, m_interactCenter.position);
-            bool closerThanCurrentInteractable = distanceToPlayer < m_currentInteractableDistance;
+            bool closerThanCurrentInteractable = distanceToPlayer < distanceToCurrentInteractable;
             if(closerThanCurrentInteractable)
             {
-                SetInteractable(interactable, colliderTF);
+                closestInteractable = interactable;
+                distanceToCurrentInteractable = distanceToPlayer;
             }
+        }
+
+        if(closestInteractable)
+        {
+            SetInteractable(closestInteractable, closestInteractable.transform);
         }
 
         UpdateInteractableDistance();
@@ -76,7 +84,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(m_interactCenter.position, m_interactRange);
+        Gizmos.DrawWireSphere(m_interactCenter.position, m_interactRange);
     }
 
     private void UpdateInteractableDistance()
