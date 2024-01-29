@@ -7,6 +7,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_scoreText;
     [SerializeField] private Image[] m_strikeImages;
     [SerializeField] private GameObject m_pauseMenu;
+    [SerializeField] private GameObject m_GameOver;
 
     private void OnEnable()
     {
@@ -25,6 +26,9 @@ public class PlayerUI : MonoBehaviour
         EventManager.I.OnGameUnPaused += HidePauseMenu;
         EventManager.I.OnPlayerStrike += UpdatePlayerStrikeUI;
         EventManager.I.OnScoreUpdate += UpdateScoreUI;
+        EventManager.I.OnGameLose += ShowGameOver;
+        
+        
     }
 
     private void UnSubscribeEvents()
@@ -34,6 +38,8 @@ public class PlayerUI : MonoBehaviour
         EventManager.I.OnGameUnPaused -= HidePauseMenu;
         EventManager.I.OnPlayerStrike -= UpdatePlayerStrikeUI;
         EventManager.I.OnScoreUpdate -= UpdateScoreUI;
+        EventManager.I.OnGameLose -= ShowGameOver;
+
     }
 
     private void UpdatePlayerStrikeUI(int _playerStrikeAmount)
@@ -84,5 +90,14 @@ public class PlayerUI : MonoBehaviour
             return;
         }
         m_pauseMenu.SetActive(false);
+    }
+
+    private void ShowGameOver()
+    {
+        if (GameManager.LoseGame())
+        {
+            
+        }
+        m_GameOver.SetActive(true);
     }
 }
