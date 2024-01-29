@@ -112,7 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scoreText: {fileID: 0}
-  m_strikeImages: []
+  m_strikeImages:
+  - {fileID: 0}
+  - {fileID: 0}
   m_pauseMenu: {fileID: 0}
 --- !u!114 &1593428651827037073
 MonoBehaviour:
@@ -174,10 +176,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.29
   m_Height: 1.73
   m_Direction: 1
-  m_Center: {x: 0, y: 0.24, z: -0.81}
+  m_Center: {x: 0, y: -0.09, z: -0.08}
 --- !u!114 &5630036772574245011
 MonoBehaviour:
   m_ObjectHideFlags: 0

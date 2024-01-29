@@ -64,7 +64,7 @@ public class PlayerUI : MonoBehaviour
             return;
         }
 
-        Debug.Log(GameManager.I + " Game Unpaused");
+        Debug.Log("Game Unpaused");
         GameManager.I.UnPauseGame();
     }
 
