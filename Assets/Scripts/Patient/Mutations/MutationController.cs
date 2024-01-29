@@ -42,4 +42,9 @@ public class MutationController : MonoBehaviour
     {
         return m_activeMutation.GetMutationHealPotionName();
     }
+
+    public void EnableMutationGFX()
+    {
+        m_activeMutation.EnableEffects();
+    }
 }

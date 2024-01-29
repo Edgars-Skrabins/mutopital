@@ -16,7 +16,6 @@ public abstract class Mutation : MonoBehaviour
     private void OnEnable()
     {
         Initialize();
-        EnableEffects();
     }
 
     private void OnDisable()
