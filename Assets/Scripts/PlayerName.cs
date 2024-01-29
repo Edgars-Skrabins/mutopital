@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using LootLocker.Requests;
 
 public class PlayerName : MonoBehaviour
 {
@@ -16,13 +17,26 @@ public class PlayerName : MonoBehaviour
             EnterPlayerUsernamePanel.SetActive(true);
             
         }
-        Debug.Log(PlayerPrefs.GetString("Username"));
+        //Debug.Log(PlayerPrefs.GetString("Username"));
     }
 
     public void EnterPlayerName()
     {
         string username = input.text.ToString();
         PlayerPrefs.SetString("Username", username);
-        Debug.Log(username);
+        LootLockerSDKManager.SetPlayerName(username, (response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Successfully set player name");
+            }
+            else
+            {
+                Debug.Log("Could not set player name" + response.errorData);
+            }
+        });
+        //Debug.Log(username);
+
+        
     }
 }
