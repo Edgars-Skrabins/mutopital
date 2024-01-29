@@ -33,6 +33,7 @@ public class MedBayManager : MonoBehaviour
             {
                 if(!_medBay.IsMedbayOccupied())
                 {
+                    _medBay.m_IsMedbayOccupied = true;
                     return _medBay;
                 }
             }

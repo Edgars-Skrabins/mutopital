@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5767,8 +5767,8 @@ Transform:
   m_GameObject: {fileID: 679251861}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.32, y: 0, z: -12.3}
-  m_LocalScale: {x: 0.8, y: 0.25, z: 0.5}
+  m_LocalPosition: {x: 8.0675, y: 0, z: -12.01}
+  m_LocalScale: {x: 1.30496, y: 0.25, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1193577347}
@@ -11630,7 +11630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1526765368
 Transform:
   m_ObjectHideFlags: 0
@@ -11640,8 +11640,8 @@ Transform:
   m_GameObject: {fileID: 1526765367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.74, y: 0, z: -4.8}
-  m_LocalScale: {x: 0.5, y: 0.25, z: 0.5}
+  m_LocalPosition: {x: 8.2857, y: 0, z: -4.8}
+  m_LocalScale: {x: 1.4087, y: 0.25, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1193577347}
@@ -12233,7 +12233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1610218222
 Transform:
   m_ObjectHideFlags: 0
@@ -12243,8 +12243,8 @@ Transform:
   m_GameObject: {fileID: 1610218221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.74, y: 0, z: -8.55}
-  m_LocalScale: {x: 0.5, y: 0.25, z: 0.5}
+  m_LocalPosition: {x: 14.5224, y: 0, z: -6.5925}
+  m_LocalScale: {x: 2.4520304, y: 0.25, z: 7.025}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1193577347}
@@ -14832,11 +14832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331645048136514529, guid: 21040f9a9aa4845d4bcf209425f6f14a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.46
+      value: 12.73
       objectReference: {fileID: 0}
     - target: {fileID: 3331645048136514529, guid: 21040f9a9aa4845d4bcf209425f6f14a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.13
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 3618119416641508876, guid: 21040f9a9aa4845d4bcf209425f6f14a, type: 3}
       propertyPath: m_Name
