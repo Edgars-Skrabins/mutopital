@@ -34,7 +34,7 @@ public class MutationController : MonoBehaviour
         {
             RemoveActiveMutation();
         }
-
+        Debug.Log("Attemptin To Remove Mutation");
         // TODO: Alternative functionality for when potion is wrong
     }
 }

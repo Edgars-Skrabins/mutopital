@@ -8,7 +8,7 @@ public class MedBayController : MonoBehaviour
     [SerializeField] private float castRadius = 1f;
     [SerializeField] private PatientStats m_occupant;
     [SerializeField] private MedBayManager m_medBayManager;
-    private bool m_nearPotion = false;
+
     public bool m_IsMedbayOccupied = false;
 
     public void SetMedBayManager(MedBayManager _medBayManager)
@@ -26,31 +26,11 @@ public class MedBayController : MonoBehaviour
             {
                 m_occupant = collider.GetComponent<PatientStats>();
                 m_IsMedbayOccupied = true;
+                m_occupant.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
                 return true; // Obstacle detected
             }
         }
         m_occupant = null;
         return false; // No obstacle detected
-    }
-    private bool IsNearPotion()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, castRadius * 3f);
-
-        foreach (Collider collider in colliders)
-        {
-            if (collider.GetComponent<Potion>() && m_occupant)
-            {
-                m_nearPotion = true;
-                return true; // Potion detected
-            }
-        }
-        m_nearPotion = false;
-        return false; // No Potion detected
-    }
-
-    private void Update()
-    {
-        if(IsMedbayOccupied() && IsNearPotion())
-            m_occupant.Heal();
     }
 }

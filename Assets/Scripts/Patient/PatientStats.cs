@@ -6,10 +6,17 @@ using UnityEngine.UI;
 public class PatientStats : PatientHealth
 {
     [SerializeField] private float m_patienceLevel = 0f;
+    [SerializeField] private MutationController m_activeMutation;
+
+    public MutationController GetMutation()
+    {
+        return m_activeMutation;
+    }
 
     private void Awake()
     {
         SetRandomPaitenceLevel();
+        m_activeMutation = GetComponentInChildren<MutationController>();
     }
 
     private void LateUpdate()

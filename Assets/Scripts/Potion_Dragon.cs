@@ -27,14 +27,12 @@ public class Potion_Dragon : Potion
     public override void Interact()
     {
         PlayerInventory player = FindObjectOfType<PlayerInventory>();
-        if (!isPicked)
+        if (!IsPicked())
         {
             player.PickUpObject(this.transform);
-            isPicked = true;
         }
         else
         {
-            isPicked = false;
             transform.parent = null;
             player.DropObject();
         }

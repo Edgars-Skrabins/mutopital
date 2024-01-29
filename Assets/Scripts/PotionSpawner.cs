@@ -14,7 +14,7 @@ public class PotionSpawner : MonoBehaviour
 {
     [SerializeField] private Transform m_spawnTransform;
     [SerializeField] private float m_spawnRate = 3f;
-    [SerializeField] private PotionType potionType;
+    [SerializeField] private PotionType m_potionType;
 
     [SerializeField] private GameObject[] m_potionPrefabs;
 
@@ -44,7 +44,15 @@ public class PotionSpawner : MonoBehaviour
     {
         if (!IsOccupied())
         {
-            Instantiate(m_potionPrefabs[(int)potionType], m_spawnTransform.position, Quaternion.identity);
+            Potion potion = Instantiate(m_potionPrefabs[(int)m_potionType], m_spawnTransform.position, Quaternion.identity).GetComponent<Potion>();
+            if (m_potionType == PotionType.Dragon)
+                potion.SetPotionName("Dragon");
+            else if(m_potionType == PotionType.Eel)
+                potion.SetPotionName("Eal");
+            else if (m_potionType == PotionType.Snake)
+                potion.SetPotionName("Snake");
+            else if (m_potionType == PotionType.Taco)
+                potion.SetPotionName("Taco");
         }
     }
 
