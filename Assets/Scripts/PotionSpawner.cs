@@ -48,7 +48,7 @@ public class PotionSpawner : MonoBehaviour
             if (m_potionType == PotionType.Dragon)
                 potion.SetPotionName("Dragon");
             else if(m_potionType == PotionType.Eel)
-                potion.SetPotionName("Eal");
+                potion.SetPotionName("Eel");
             else if (m_potionType == PotionType.Snake)
                 potion.SetPotionName("Snake");
             else if (m_potionType == PotionType.Taco)

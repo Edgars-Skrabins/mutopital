@@ -51,10 +51,12 @@ public class MedBayController : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            if (collider.GetComponent<PatientStats>() && collider != GetComponent<Collider>())
+            if (collider.GetComponent<PatientStats>() && collider != GetComponent<Collider>() && !collider.GetComponent<PatientStats>().IsHealed())
             {
                 if (m_occupant != collider.GetComponent<PatientStats>())
-                    m_occupant.GetComponent<PatientController>().FindFreeMedBay();
+                {
+                   m_occupant.GetComponent<PatientController>().FindNewFreeMedBay();
+                }
             }
         }
     }
