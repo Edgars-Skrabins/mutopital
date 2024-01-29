@@ -5,7 +5,7 @@ public static class LootLockerSettingsOverrider
 {
     public static void OverrideSettings()
     {
-        LootLockerSDKManager.Init("dev_3a04ddea32464ca48226eb821a99e3e4", "0.0.0.1", "2112hpxu");
+        LootLockerSDKManager.Init("dev_fa6326bd486a4b318f87ddf86b759897", "0.0.0.1", "nt39qy2a");
         LootLocker.LootLockerConfig.current.currentDebugLevel = LootLocker.LootLockerConfig.DebugLevel.All;
     }
 }
