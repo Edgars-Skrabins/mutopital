@@ -25,12 +25,17 @@ public class MedBayController : MonoBehaviour
             if (collider.GetComponent<PatientStats>() && collider != GetComponent<Collider>())
             {
                 m_occupant = collider.GetComponent<PatientStats>();
-                m_IsMedbayOccupied = true;
                 m_occupant.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+                m_IsMedbayOccupied = true;
                 return true; // Obstacle detected
             }
         }
         m_occupant = null;
         return false; // No obstacle detected
+    }
+
+    private void Update()
+    {
+        IsMedbayOccupied();
     }
 }
