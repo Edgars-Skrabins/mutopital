@@ -82,11 +82,6 @@ public class PlayerInteract : MonoBehaviour
         CheckIfInteractableIsInRange();
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(m_interactCenter.position, m_interactRange);
-    }
-
     private void UpdateInteractableDistance()
     {
         if(m_currentInteractableTF)
