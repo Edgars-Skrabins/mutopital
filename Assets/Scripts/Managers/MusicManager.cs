@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
+    
+    
     [SerializeField] private AudioClip[] clips;
     private AudioSource audioSource;
     private int lastScene;
