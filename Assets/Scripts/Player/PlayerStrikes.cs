@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerStrikes : MonoBehaviour
 {
-    private int m_maxPlayerStrikesInclusive;
-
+    [SerializeField] private int m_maxPlayerStrikesInclusive;
     private int m_playerStrikes;
 
     public void StrikePlayer(int _strikeDamageAmount)
