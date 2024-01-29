@@ -157,8 +157,8 @@ GameObject:
   m_Component:
   - component: {fileID: 769706986831201501}
   - component: {fileID: 7671638867702480820}
-  - component: {fileID: 8520056287941209586}
   - component: {fileID: 7977567077068453147}
+  - component: {fileID: 7556598747048784211}
   m_Layer: 0
   m_Name: Potion_Dragon
   m_TagString: Potion
@@ -210,21 +210,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8520056287941209586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3802777962313782791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f5a4f631eb240919129932e5f50f55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_interactGFX: {fileID: 2280883407690021553}
-  m_potionName: Dragon
-  isPicked: 0
 --- !u!136 &7977567077068453147
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -248,3 +233,18 @@ CapsuleCollider:
   m_Height: 0.78
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &7556598747048784211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802777962313782791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a38aca541c0c46b3ba035a451c32977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactGFX: {fileID: 2280883407690021553}
+  m_potionName: Dragon
+  isPicked: 0

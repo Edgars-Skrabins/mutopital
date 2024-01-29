@@ -970,7 +970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1271350876977233664
 Transform:
   m_ObjectHideFlags: 0
@@ -1000,14 +1000,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62547e2a2e2df4ca19354a7d206aa185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mutationGFX: {fileID: 0}
-  m_effectWarningGFX: {fileID: 0}
-  m_warningDuration: 0
-  m_effectSpawnRotation: {fileID: 0}
-  m_effectSpawnLocation: {fileID: 0}
-  m_effectPrefab: {fileID: 0}
-  m_effectFrequency: 0
-  m_healPotionName: 
+  m_mutationGFX: {fileID: 4732347683174804611}
+  m_effectWarningGFX: {fileID: 5830773571292153444}
+  m_warningDuration: 0.3
+  m_effectSpawnRotation: {fileID: 4987225190928420138}
+  m_effectSpawnLocation: {fileID: 4987225190928420138}
+  m_effectPrefab: {fileID: 8207395259670566861, guid: 0744c18a33a1c4fce83d506bd21988fd, type: 3}
+  m_effectFrequency: 1
+  m_healPotionName: Snake
 --- !u!1 &7473891341212875461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1161,7 @@ MonoBehaviour:
   m_mutations:
   - {fileID: 8271522563691066293}
   - {fileID: 2262283297732634238}
+  - {fileID: 6194214024962181728}
   m_activeMutation: {fileID: 0}
 --- !u!1 &7850648667278529698
 GameObject:

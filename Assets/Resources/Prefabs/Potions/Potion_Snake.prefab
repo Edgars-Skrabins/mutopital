@@ -112,8 +112,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2222127423448609000}
   - component: {fileID: 3929595622532041193}
-  - component: {fileID: -3981638838315504425}
   - component: {fileID: -8691094196788844264}
+  - component: {fileID: 401728599671347522}
   m_Layer: 0
   m_Name: Potion_Snake
   m_TagString: Potion
@@ -165,21 +165,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3981638838315504425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5104705217525324649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc06f5eed3d645e3bcbaca85833a285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_interactGFX: {fileID: 5585448848363807820}
-  m_potionName: Snake
-  isPicked: 0
 --- !u!136 &-8691094196788844264
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -203,6 +188,21 @@ CapsuleCollider:
   m_Height: 0.78
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &401728599671347522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104705217525324649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df401522709a408eac7ca73e022c12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactGFX: {fileID: 5585448848363807820}
+  m_potionName: 
+  isPicked: 0
 --- !u!1 &5585448848363807820
 GameObject:
   m_ObjectHideFlags: 0

@@ -112,8 +112,8 @@ GameObject:
   m_Component:
   - component: {fileID: 434840474768515489}
   - component: {fileID: -6299187892935046680}
-  - component: {fileID: 6153326381210486342}
   - component: {fileID: -1981209430269709561}
+  - component: {fileID: 6785426168839158616}
   m_Layer: 0
   m_Name: Potion_Eel
   m_TagString: Potion
@@ -165,21 +165,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6153326381210486342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7556274299571040939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6864869f104304750885715793c3b7fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_interactGFX: {fileID: 8493442119841665910}
-  m_potionName: Eel
-  isPicked: 0
 --- !u!136 &-1981209430269709561
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -203,6 +188,21 @@ CapsuleCollider:
   m_Height: 0.78
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &6785426168839158616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7556274299571040939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29cf00479af0144cab7e99fc25a7a30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactGFX: {fileID: 8493442119841665910}
+  m_potionName: 
+  isPicked: 0
 --- !u!1 &8493442119841665910
 GameObject:
   m_ObjectHideFlags: 0
