@@ -211,7 +211,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""GamePad"",
                     ""id"": ""2b868792-cf67-48c3-9bf3-dcc8277cf33a"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -224,7 +224,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""14329950-6ff0-4168-a8ed-424383050bf7"",
-                    ""path"": ""<Joystick>/stick/up"",
+                    ""path"": ""<XInputController>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -235,7 +235,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""aec859fd-4ca7-4863-954b-9308acac4d78"",
-                    ""path"": ""<Joystick>/stick/down"",
+                    ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -246,7 +246,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""dc7aea2e-094b-4550-969e-44f2b0dfe64e"",
-                    ""path"": ""<Joystick>/stick/left"",
+                    ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -257,7 +257,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""7f2f0044-3436-4d40-aa19-b9911adcc426"",
-                    ""path"": ""<Joystick>/stick/right"",
+                    ""path"": ""<XInputController>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
