@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_interactGFX: {fileID: 8493442119841665910}
+  m_potionName: Eel
   isPicked: 0
 --- !u!136 &-1981209430269709561
 CapsuleCollider:

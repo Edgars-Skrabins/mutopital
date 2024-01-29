@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_interactGFX: {fileID: 5585448848363807820}
+  m_potionName: Snake
   isPicked: 0
 --- !u!136 &-8691094196788844264
 CapsuleCollider:

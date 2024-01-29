@@ -261,7 +261,7 @@ MonoBehaviour:
   m_effectSpawnRotation: {fileID: 4987225190928420138}
   m_effectSpawnLocation: {fileID: 4987225190928420138}
   m_effectPrefab: {fileID: 3084221918592084509, guid: fd789e5afca9c4e9c87a056b5e71a473, type: 3}
-  m_effectFrequency: 5
+  m_effectFrequency: 2.5
   m_healPotionName: Dragon
 --- !u!1 &3291585402693690605
 GameObject:
@@ -307,8 +307,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9716981, g: 0.068752214, b: 0.068752214, a: 1}
-  m_Intensity: 2.5
+  m_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -758,7 +758,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0513080a2200363439e90d692e63ae61, type: 2}
+  - {fileID: 2100000, guid: a9502f2e6f1be4bcc9df84b39fa5a854, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -841,7 +841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0513080a2200363439e90d692e63ae61, type: 2}
+  - {fileID: 2100000, guid: eff8b9def1f5b4d58828435e210daa61, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -911,12 +911,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mutationGFX: {fileID: 3420998081483121044}
-  m_effectWarningGFX: {fileID: 3420998081483121044}
+  m_effectWarningGFX: {fileID: 8605631006881331840}
   m_warningDuration: 1
   m_effectSpawnRotation: {fileID: 1180701560898431297}
   m_effectSpawnLocation: {fileID: 1180701560898431297}
   m_effectPrefab: {fileID: 4118911547943350311, guid: e934777458f8e4d0c8096830acc3a77c, type: 3}
-  m_effectFrequency: 6
+  m_effectFrequency: 4
   m_healPotionName: Eel
 --- !u!1 &6516938622875489452
 GameObject:
@@ -1277,7 +1277,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0513080a2200363439e90d692e63ae61, type: 2}
+  - {fileID: 2100000, guid: 0f9f42c99525e485e82093c4d996e693, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

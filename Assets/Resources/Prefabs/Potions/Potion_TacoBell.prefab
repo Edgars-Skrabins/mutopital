@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_interactGFX: {fileID: 9030592421311534171}
+  m_potionName: TacoBell
   isPicked: 0
 --- !u!136 &2670000187045532930
 CapsuleCollider:

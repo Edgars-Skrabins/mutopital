@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_interactGFX: {fileID: 2280883407690021553}
+  m_potionName: Dragon
   isPicked: 0
 --- !u!136 &7977567077068453147
 CapsuleCollider:

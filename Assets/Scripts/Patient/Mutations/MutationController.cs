@@ -18,7 +18,7 @@ public class MutationController : MonoBehaviour
 
     private void PickRandomMutation()
     {
-        int randomNum = Random.Range(0, m_mutations.Length - 1);
+        int randomNum = Random.Range(0, m_mutations.Length);
         m_activeMutation = m_mutations[randomNum];
         m_mutations[randomNum].enabled = true;
     }

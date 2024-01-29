@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4623a13be7c4a1eadac1c9b759cc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: 4
+  m_moveSpeed: 7
   m_playerRB: {fileID: 413466705056814459}
 --- !u!114 &422437368417192224
 MonoBehaviour:
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa3bddb4bb047028340dd372909356a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxPlayerStrikesInclusive: 0
+  m_maxPlayerStrikesInclusive: 3
 --- !u!1 &7484145617536099841
 GameObject:
   m_ObjectHideFlags: 0
