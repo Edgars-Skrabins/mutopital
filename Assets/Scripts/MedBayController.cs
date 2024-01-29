@@ -32,6 +32,8 @@ public class MedBayController : MonoBehaviour
                 return true; // Obstacle detected
             }
         }
+
+        m_IsMedbayOccupied = false;
         m_occupant = null;
         return false; // No obstacle detected
     }
@@ -39,5 +41,21 @@ public class MedBayController : MonoBehaviour
     private void Update()
     {
         IsMedbayOccupied();
+
+        FixOverlapingPatients();
+    }
+
+    private void FixOverlapingPatients()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, castRadius);
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider.GetComponent<PatientStats>() && collider != GetComponent<Collider>())
+            {
+                if (m_occupant != collider.GetComponent<PatientStats>())
+                    m_occupant.GetComponent<PatientController>().FindFreeMedBay();
+            }
+        }
     }
 }

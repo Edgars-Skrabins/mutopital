@@ -103,15 +103,11 @@ public class PatientController : MonoBehaviour
         return false; // No Medbay detected
     }
 
-    private void FindFreeMedBay()
+    public void FindFreeMedBay()
     {
         m_freeMedBay = m_medBayManager.GetUnoccupiedMedBay();
-
-        if (m_freeMedBay != null)
-        {
-            SetDestination(m_freeMedBay.transform);
-            m_freeMedBay.m_IsMedbayOccupied = true;
-        }
+        m_freeMedBay.m_IsMedbayOccupied = true;
+        SetDestination(m_freeMedBay.transform);
     }
 
     private void Wait()
