@@ -73,7 +73,7 @@ public class GenericTypeLeaderboard : MonoBehaviour
          * ensuring that every new score gets its' own post on the leaderboard.
          */
         string infiniteScores = memberID + GetAndIncrementScoreCharacters();
-        LootLockerSDKManager.SubmitScore(infiniteScores, PlayerPrefs.GetInt("LastScore"), leaderboardKey, PlayerPrefs.GetString("Username"), (response) =>
+        LootLockerSDKManager.SubmitScore(infiniteScores, PlayerPrefs.GetInt("Highscore"), leaderboardKey, PlayerPrefs.GetString("Username"), (response) =>
         {
             if (response.success)
             {
