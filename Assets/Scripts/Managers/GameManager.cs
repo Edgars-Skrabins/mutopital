@@ -1,3 +1,6 @@
+using Codice.Client.Common;
+using Time = UnityEngine.Time;
+
 public class GameManager : Singleton<GameManager>
 {
     private bool m_isGamePaused;
@@ -43,12 +46,14 @@ public class GameManager : Singleton<GameManager>
     public void PauseGame()
     {
         m_isGamePaused = true;
+        Time.timeScale = 0;
         EventManager.I.OnGamePaused_Invoke();
     }
 
     public void UnPauseGame()
     {
         m_isGamePaused = false;
+        Time.timeScale = 1;
         EventManager.I.OnGameUnPaused_Invoke();
     }
 

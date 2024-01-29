@@ -41,6 +41,10 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.I.IsGamePaused())
+        {
+            return;
+        }
         HandleInteract();
     }
 

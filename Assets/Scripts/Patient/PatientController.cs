@@ -20,6 +20,10 @@ public class PatientController : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.I.IsGamePaused())
+        {
+            return;
+        }
         if(!m_isHealed && !m_inTrasitionToMedBay)
         {
             m_stats.SetPatienceLevel(m_stats.GetPatienceLevel() - Time.deltaTime);
