@@ -94,10 +94,7 @@ public class PlayerUI : MonoBehaviour
 
     private void ShowGameOver()
     {
-        if (GameManager.LoseGame())
-        {
-            
-        }
+        GameManager.I.LoseGame();
         m_GameOver.SetActive(true);
     }
 }
