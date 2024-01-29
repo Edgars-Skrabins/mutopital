@@ -560,6 +560,37 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!1 &4347549312961796234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1180701560898431297}
+  m_Layer: 0
+  m_Name: Eel_SpawnLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1180701560898431297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347549312961796234}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 428865343505247248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4513998033959812355
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &428865343505247248
 Transform:
   m_ObjectHideFlags: 0
@@ -864,6 +895,7 @@ Transform:
   m_Children:
   - {fileID: 1308513713126641621}
   - {fileID: 5939833317945995342}
+  - {fileID: 1180701560898431297}
   m_Father: {fileID: 1636462702516553385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2262283297732634238
@@ -878,14 +910,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1ee0bf541914c6c8d12b6472279d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mutationGFX: {fileID: 0}
-  m_effectWarningGFX: {fileID: 0}
-  m_warningDuration: 0
-  m_effectSpawnRotation: {fileID: 0}
-  m_effectSpawnLocation: {fileID: 0}
-  m_effectPrefab: {fileID: 0}
-  m_effectFrequency: 0
-  m_healPotionName: 
+  m_mutationGFX: {fileID: 3420998081483121044}
+  m_effectWarningGFX: {fileID: 3420998081483121044}
+  m_warningDuration: 1
+  m_effectSpawnRotation: {fileID: 1180701560898431297}
+  m_effectSpawnLocation: {fileID: 1180701560898431297}
+  m_effectPrefab: {fileID: 4118911547943350311, guid: e934777458f8e4d0c8096830acc3a77c, type: 3}
+  m_effectFrequency: 6
+  m_healPotionName: Eel
 --- !u!1 &6516938622875489452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mutations:
   - {fileID: 8271522563691066293}
+  - {fileID: 2262283297732634238}
   m_activeMutation: {fileID: 0}
 --- !u!1 &7850648667278529698
 GameObject:
