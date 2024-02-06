@@ -83,6 +83,6 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadScene(0);
         PauseGame();
-        EventManager.I.OnGameLoss_Invoke();
+        //EventManager.I.OnGameLoss_Invoke();
     }
 }
