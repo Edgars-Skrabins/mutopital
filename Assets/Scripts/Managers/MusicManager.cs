@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
-    
-    
     [SerializeField] private AudioClip[] clips;
     private AudioSource audioSource;
     private int lastScene;
@@ -39,14 +37,11 @@ public class MusicManager : MonoBehaviour
             }
             else
             {
-                if (musicAlreadyShot == true) { return; }
+                if (musicAlreadyShot) { return; }
                 audioSource.clip = clips[1];
                 audioSource.Play();
                 lastScene = SceneManager.GetActiveScene().buildIndex;
             }
         }
     }
-
-
-
 }

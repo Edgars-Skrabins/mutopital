@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,10 +10,12 @@ public class MedBayManager : MonoBehaviour
     {
         InitializeMedBays();
     }
+
     public List<MedBayController> GetAllMedBays()
     {
         return m_medBaysAll;
     }
+
     public Vector3 GetWaitPoint()
     {
         return m_waitPointTF.position;
@@ -27,17 +28,18 @@ public class MedBayManager : MonoBehaviour
 
     public MedBayController GetUnoccupiedMedBay()
     {
-        if(m_medBaysAll.Capacity > 0)
+        if (m_medBaysAll.Capacity > 0)
         {
             foreach (MedBayController _medBay in m_medBaysAll)
             {
-                if(!_medBay.IsMedbayOccupied())
+                if (!_medBay.IsMedbayOccupied())
                 {
                     _medBay.m_IsMedbayOccupied = true;
                     return _medBay;
                 }
             }
         }
+
         return null;
     }
 
@@ -46,7 +48,7 @@ public class MedBayManager : MonoBehaviour
         if (m_medBaysAll.Capacity > 0)
         {
             Transform nearestMedBay = null;
-            float farthestDistance= 0f;
+            float farthestDistance = 0f;
 
             foreach (MedBayController _medBay in m_medBaysAll)
             {
@@ -59,10 +61,12 @@ public class MedBayManager : MonoBehaviour
                         nearestMedBay = _medBay.transform;
                         farthestDistance = medBayDistance;
                     }
+
                     return nearestMedBay.position;
                 }
             }
         }
+
         return Vector3.zero;
     }
 
@@ -93,8 +97,10 @@ public class MedBayManager : MonoBehaviour
         }
 
         if (m_medBaysAll.Count == patientsInTransition)
+        {
             return false;
-        else
-            return true;
+        }
+
+        return true;
     }
 }

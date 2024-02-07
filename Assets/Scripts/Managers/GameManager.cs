@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 
     private void UnSubscribeEvents()
     {
-        InputManager.I.OnPausePerformed += HandlePause;
+        InputManager.I.OnPausePerformed -= HandlePause;
     }
 
     private void Initialize()

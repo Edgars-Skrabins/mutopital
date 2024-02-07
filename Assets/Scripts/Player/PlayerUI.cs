@@ -27,8 +27,6 @@ public class PlayerUI : MonoBehaviour
         EventManager.I.OnPlayerStrike += UpdatePlayerStrikeUI;
         EventManager.I.OnScoreUpdate += UpdateScoreUI;
         EventManager.I.OnGameLose += ShowGameOver;
-        
-        
     }
 
     private void UnSubscribeEvents()
@@ -39,14 +37,13 @@ public class PlayerUI : MonoBehaviour
         EventManager.I.OnPlayerStrike -= UpdatePlayerStrikeUI;
         EventManager.I.OnScoreUpdate -= UpdateScoreUI;
         EventManager.I.OnGameLose -= ShowGameOver;
-
     }
 
     private void UpdatePlayerStrikeUI(int _playerStrikeAmount)
     {
-        for(int i = 0; i < m_strikeImages.Length; i++)
+        for (int i = 0; i < m_strikeImages.Length; i++)
         {
-            if(i <= _playerStrikeAmount)
+            if (i <= _playerStrikeAmount)
             {
                 m_strikeImages[i].enabled = true;
                 continue;
@@ -63,7 +60,7 @@ public class PlayerUI : MonoBehaviour
 
     private void HandlePause()
     {
-        if(GameManager.I.IsGamePaused())
+        if (GameManager.I.IsGamePaused())
         {
             GameManager.I.PauseGame();
             Debug.Log("Game Paused");
@@ -76,19 +73,21 @@ public class PlayerUI : MonoBehaviour
 
     private void ShowPauseMenu()
     {
-        if(!GameManager.I.HasGameStarted())
+        if (!GameManager.I.HasGameStarted())
         {
             return;
         }
+
         m_pauseMenu.SetActive(true);
     }
 
     private void HidePauseMenu()
     {
-        if(!GameManager.I.HasGameStarted())
+        if (!GameManager.I.HasGameStarted())
         {
             return;
         }
+
         m_pauseMenu.SetActive(false);
     }
 

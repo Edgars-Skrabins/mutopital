@@ -8,7 +8,6 @@ public class EventManager : Singleton<EventManager>
     public event Action<int> OnScoreUpdate;
     public event Action OnGameLose;
 
-
     public void OnGamePaused_Invoke()
     {
         OnGamePaused?.Invoke();

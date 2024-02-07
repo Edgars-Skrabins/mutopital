@@ -5,12 +5,10 @@ using UnityEngine.InputSystem;
 public class InputManager : Singleton<InputManager>
 {
     private InputActions m_inputActions;
-
     public event Action OnInteractPerformed;
     private InputAction m_playerInteractIA;
 
     private InputAction m_playerMovementIA;
-
     public event Action OnPausePerformed;
     private InputAction m_playerPauseIA;
 
@@ -84,7 +82,7 @@ public class InputManager : Singleton<InputManager>
 
     private void Interact_Action(InputAction.CallbackContext _inputCtx)
     {
-        switch(_inputCtx.phase)
+        switch (_inputCtx.phase)
         {
             case InputActionPhase.Performed:
                 OnInteractPerformed?.Invoke();
@@ -95,7 +93,7 @@ public class InputManager : Singleton<InputManager>
 
     private void Pause_Action(InputAction.CallbackContext _inputCtx)
     {
-        switch(_inputCtx.phase)
+        switch (_inputCtx.phase)
         {
             case InputActionPhase.Performed:
                 OnPausePerformed?.Invoke();
