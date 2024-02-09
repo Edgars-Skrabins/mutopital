@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class PlayerStrikes : MonoBehaviour
 {
-    [SerializeField] private int m_maxPlayerStrikesInclusive;
+    [SerializeField] private int m_initialStrikeAmount;
     private int m_playerStrikes;
+
+    private void Awake()
+    {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        m_playerStrikes = m_initialStrikeAmount;
+    }
 
     public void StrikePlayer(int _strikeDamageAmount)
     {
         m_playerStrikes -= _strikeDamageAmount;
-        if(m_playerStrikes <= 0)
+        if (m_playerStrikes <= 0)
         {
-            //KillPlayer();
+            KillPlayer();
         }
         AudioManager.I.PlaySound("GettingHit");
         EventManager.I.OnPlayerStrike_Invoke(m_playerStrikes);
