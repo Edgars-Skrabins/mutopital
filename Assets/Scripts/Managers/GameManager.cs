@@ -40,9 +40,13 @@ public class GameManager : Singleton<GameManager>
     private void HandlePause()
     {
         if (m_isGamePaused)
+        {
             UnPauseGame();
+        }
         else
+        {
             PauseGame();
+        }
     }
 
     public void PauseGame()
