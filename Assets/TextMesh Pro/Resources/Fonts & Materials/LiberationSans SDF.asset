@@ -11,9 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: c8d12adcee749c344b8117cf7c7eb912, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - OUTLINE_ON
-  - UNDERLAY_ON
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -44,7 +42,7 @@ Material:
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _MaskWipeControl: 0.5
-    - _OutlineSoftness: 0.028
+    - _OutlineSoftness: 0
     - _OutlineWidth: 0.082
     - _PerspectiveFilter: 0.875
     - _ScaleRatioA: 0.9

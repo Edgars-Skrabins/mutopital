@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Initialize()
     {
-        PauseGame();
+        //PauseGame();
     }
 
     private void HandlePause()

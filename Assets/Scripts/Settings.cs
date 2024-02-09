@@ -16,7 +16,7 @@ public class Settings : Singleton<Settings>
     //[SerializeField] private TMP_Text versionTxt;
     private void Start()
     {
-        GetSettings();
+        //GetSettings();
         //PlayerPref get then set all values for audio
         //versionTxt.text = Application.version;
     }

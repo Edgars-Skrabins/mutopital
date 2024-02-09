@@ -46,33 +46,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 0
   m_audioSFXList:
-  - name: HospitalAmbience
+  - name: Ambience
     audioClip: {fileID: 8300000, guid: b9499b9dc84b74ffbbad33ca46502f77, type: 3}
-    volume: 0.331
+    volume: 0.158
+    isMusic: 0
+    isUISFX: 0
+    randomizePitch: 0
     playOnAwake: 1
     loop: 1
   - name: GettingHit
     audioClip: {fileID: 8300000, guid: c3d62f862c8f246a2afdf2a387f1f008, type: 3}
     volume: 0.406
+    isMusic: 0
+    isUISFX: 0
+    randomizePitch: 1
     playOnAwake: 0
     loop: 0
   - name: PickupPotion
     audioClip: {fileID: 8300000, guid: 13ae8e2188a6d49b89d2d1714c745027, type: 3}
     volume: 0.8
+    isMusic: 0
+    isUISFX: 0
+    randomizePitch: 1
     playOnAwake: 0
     loop: 0
   - name: DropPotion
     audioClip: {fileID: 8300000, guid: 4985a1f81b1f148ccb48f8bbf7a57014, type: 3}
     volume: 0.8
+    isMusic: 0
+    isUISFX: 0
+    randomizePitch: 1
     playOnAwake: 0
     loop: 0
   - name: Warning
     audioClip: {fileID: 8300000, guid: a1ae0c33d67ac45bb9c263146c7397f9, type: 3}
     volume: 0.421
+    isMusic: 0
+    isUISFX: 0
+    randomizePitch: 1
     playOnAwake: 0
     loop: 0
   - name: Player Dead
     audioClip: {fileID: 8300000, guid: 59ad6cf7541df442f8dfb052c93ab498, type: 3}
     volume: 0.421
+    isMusic: 0
+    isUISFX: 0
+    randomizePitch: 0
     playOnAwake: 0
     loop: 0
+  m_mixer: {fileID: 24100000, guid: 2cba020f155ec4209881898599be7ed1, type: 2}
+  m_musicMixer: {fileID: 2022948098914062572, guid: 2cba020f155ec4209881898599be7ed1, type: 2}
+  m_sfxMixer: {fileID: 4353626585639719140, guid: 2cba020f155ec4209881898599be7ed1, type: 2}
+  m_uiMixer: {fileID: -5390325002105848539, guid: 2cba020f155ec4209881898599be7ed1, type: 2}
+  m_masterSlider:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_musicSlider:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_sfxSlider:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_uiSlider:
+  - {fileID: 0}
+  - {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 2cba020f155ec4209881898599be7ed1, type: 2}
