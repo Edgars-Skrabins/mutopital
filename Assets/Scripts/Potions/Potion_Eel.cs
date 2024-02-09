@@ -5,7 +5,6 @@ using UnityEngine;
 public class Potion_Eel : Potion
 {
     private Rigidbody m_rigidbody;
-    [SerializeField] private bool isPicked = false;
 
     private void Awake()
     {
@@ -17,27 +16,12 @@ public class Potion_Eel : Potion
         if (transform.parent != null)
         {
             m_rigidbody.isKinematic = true;
+
         }
         else
         {
             m_rigidbody.isKinematic = false;
+            CheckForDestruction();
         }
-    }
-
-    public override void Interact()
-    {
-        PlayerInventory player = FindObjectOfType<PlayerInventory>();
-        if (!isPicked)
-        {
-            player.PickUpObject(this.transform);
-            isPicked = true;
-        }
-        else
-        {
-            isPicked = false;
-            transform.parent = null;
-            player.DropObject();
-        }
-
     }
 }

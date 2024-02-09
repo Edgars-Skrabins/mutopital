@@ -21,21 +21,7 @@ public class Potion_Dragon : Potion
         else
         {
             m_rigidbody.isKinematic = false;
+            CheckForDestruction();
         }
-    }
-
-    public override void Interact()
-    {
-        PlayerInventory player = FindObjectOfType<PlayerInventory>();
-        if (!IsPicked())
-        {
-            player.PickUpObject(this.transform);
-        }
-        else
-        {
-            transform.parent = null;
-            player.DropObject();
-        }
-
     }
 }

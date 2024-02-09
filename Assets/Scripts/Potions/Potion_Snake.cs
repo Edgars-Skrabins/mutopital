@@ -21,23 +21,7 @@ public class Potion_Snake : Potion
         else
         {
             m_rigidbody.isKinematic = false;
+            CheckForDestruction();
         }
-    }
-
-    public override void Interact()
-    {
-        PlayerInventory player = FindObjectOfType<PlayerInventory>();
-        if (!isPicked)
-        {
-            player.PickUpObject(this.transform);
-            isPicked = true;
-        }
-        else
-        {
-            isPicked = false;
-            transform.parent = null;
-            player.DropObject();
-        }
-
     }
 }
