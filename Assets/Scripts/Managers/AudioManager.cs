@@ -7,6 +7,7 @@ public class AudioSFX
 {
     public string name;
     public AudioClip audioClip;
+    [Range(0,1)]public float volume = 0.8f;
     //public bool isMusic;
     //public bool isUISFX;
     //public bool randomizePitch;
@@ -38,11 +39,17 @@ public class AudioManager : Singleton<AudioManager>
                 sfxObject.transform.SetParent(this.transform);
 
                 AudioSource newAudioSource = sfxObject.GetComponent<AudioSource>();
+                newAudioSource.volume = sfx.volume;
                 newAudioSource.clip = sfx.audioClip;
-                newAudioSource.playOnAwake = sfx.playOnAwake;
+                if (sfx.playOnAwake)
+                {
+                    newAudioSource.playOnAwake = sfx.playOnAwake;
+                    newAudioSource.Play();
+                }
                 newAudioSource.loop = sfx.loop;
 
                 m_audioSourceObjects.Add(sfxObject);
+
             }
         }
     }
@@ -61,12 +68,21 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySound(string _name)
     {
-        GetAudioSource(_name).Play();
-    }
+        AudioSource source = GetAudioSource(_name);
 
+        if (source && !source.isPlaying)
+        {
+            source.Play();
+        }
+    }
 
     public void StopSound(string _name)
     {
-        GetAudioSource(_name).Stop();
+        AudioSource source = GetAudioSource(_name);
+
+        if (source && !source.isPlaying)
+        {
+            source.Stop();
+        }
     }
 }

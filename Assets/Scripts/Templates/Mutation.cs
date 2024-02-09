@@ -64,11 +64,13 @@ public abstract class Mutation : MonoBehaviour
     private void ShowWarning()
     {
         m_effectWarningGFX.SetActive(true);
+        AudioManager.I.PlaySound("Warning");
     }
 
     private void HideWarning()
     {
         m_effectWarningGFX.SetActive(false);
+        AudioManager.I.StopSound("Warning");
     }
 
     private void ResetTimer()

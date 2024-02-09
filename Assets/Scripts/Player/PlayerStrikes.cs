@@ -10,9 +10,9 @@ public class PlayerStrikes : MonoBehaviour
         m_playerStrikes -= _strikeDamageAmount;
         if(m_playerStrikes <= 0)
         {
-            KillPlayer();
+            //KillPlayer();
         }
-
+        AudioManager.I.PlaySound("GettingHit");
         EventManager.I.OnPlayerStrike_Invoke(m_playerStrikes);
     }
 
@@ -23,6 +23,7 @@ public class PlayerStrikes : MonoBehaviour
 
     private void KillPlayer()
     {
+        AudioManager.I.PlaySound("PlayerDead");
         GameManager.I.LoseGame();
     }
 }
