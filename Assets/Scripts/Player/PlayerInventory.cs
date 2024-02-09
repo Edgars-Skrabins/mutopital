@@ -29,19 +29,20 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             DropObject();
-            m_objectsInHand = _object;
-            m_objectsInHand.SetParent(m_handTF);
-            m_objectsInHand.position = m_handTF.position;
         }
+        AudioManager.I.PlaySound("PickupPotion");
     }
 
     public void DropObject()
     {
         if (m_objectsInHand)
         {
-            m_objectsInHand.DetachChildren();
-            m_objectsInHand.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.Impulse);
+            m_objectsInHand.SetParent(null);
+            Rigidbody rb = m_objectsInHand.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.AddForce((transform.position - m_objectsInHand.position).normalized * -10, ForceMode.Impulse);
             m_objectsInHand = null;
+            AudioManager.I.PlaySound("DropPotion");
         }
     }
 }
