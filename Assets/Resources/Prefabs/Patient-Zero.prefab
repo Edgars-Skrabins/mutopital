@@ -912,7 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mutationGFX: {fileID: 3420998081483121044}
   m_effectWarningGFX: {fileID: 8605631006881331840}
-  m_warningDuration: 1
+  m_warningDuration: 1.25
   m_effectSpawnRotation: {fileID: 1180701560898431297}
   m_effectSpawnLocation: {fileID: 1180701560898431297}
   m_effectPrefab: {fileID: 4118911547943350311, guid: e934777458f8e4d0c8096830acc3a77c, type: 3}
@@ -1002,11 +1002,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mutationGFX: {fileID: 4732347683174804611}
   m_effectWarningGFX: {fileID: 5830773571292153444}
-  m_warningDuration: 0.3
+  m_warningDuration: 1
   m_effectSpawnRotation: {fileID: 4987225190928420138}
   m_effectSpawnLocation: {fileID: 4987225190928420138}
   m_effectPrefab: {fileID: 8207395259670566861, guid: 0744c18a33a1c4fce83d506bd21988fd, type: 3}
-  m_effectFrequency: 1
+  m_effectFrequency: 0.9
   m_healPotionName: Snake
 --- !u!1 &7473891341212875461
 GameObject:
@@ -1212,11 +1212,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mutationGFX: {fileID: 1135977964087668260}
   m_effectWarningGFX: {fileID: 5486388257256332764}
-  m_warningDuration: 0.3
+  m_warningDuration: 0.8
   m_effectSpawnRotation: {fileID: 4987225190928420138}
   m_effectSpawnLocation: {fileID: 4987225190928420138}
   m_effectPrefab: {fileID: 3084221918592084509, guid: ba635eb590f444e5cb1b738425e078cc, type: 3}
-  m_effectFrequency: 2.5
+  m_effectFrequency: 2.7
   m_healPotionName: Taco
 --- !u!1 &8605631006881331840
 GameObject:
