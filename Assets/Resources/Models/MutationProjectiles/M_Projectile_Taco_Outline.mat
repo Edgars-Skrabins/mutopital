@@ -44,8 +44,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_255507f1e349489fa6b178c8e380eb6c:
-        m_Texture: {fileID: 2800000, guid: a75060d2f09f8a540aa33a0b0f81d454, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Texture: {fileID: 2800000, guid: f2da8905a03f5424b85a9ebc24a2a8bf, type: 3}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
@@ -128,8 +128,8 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _Metallicness: 0
-    - _NoiseScale: 14
-    - _NoiseSpeed: 0.54
+    - _NoiseScale: 5
+    - _NoiseSpeed: 0.76
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _Power: 0
@@ -147,11 +147,11 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - Color_e2229bc123e44e16acc0cd209d3999a9: {r: 10.766683, g: 0.45707598, b: 0.45707598, a: 0.50980395}
+    - Color_e2229bc123e44e16acc0cd209d3999a9: {r: 57.49747, g: 48.976383, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MainSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 0.1981132, g: 0.057004265, b: 0.057004265, a: 0}
+    - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
