@@ -60,7 +60,7 @@ public class PlayerUI : MonoBehaviour
 
     private void HandlePause()
     {
-        if (!GameManager.I.HasGameStarted())
+        if (!GameManager.I.HasGameStarted() || !GameManager.I.m_isPlayerAlive)
         {
             return;
         }
@@ -96,7 +96,6 @@ public class PlayerUI : MonoBehaviour
 
     private void ShowGameOver()
     {
-        GameManager.I.LoseGame();
         m_GameOver.SetActive(true);
     }
 }

@@ -6,6 +6,8 @@ public class GameManager : Singleton<GameManager>
     private bool m_isGamePaused;
     private bool m_hasGameStarted;
 
+    public bool m_isPlayerAlive;
+
     protected override void Awake()
     {
         base.Awake();
@@ -70,6 +72,7 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        m_isPlayerAlive = true;
         SetHasGameStarted(true);
     }
 
@@ -85,8 +88,7 @@ public class GameManager : Singleton<GameManager>
 
     public void LoseGame()
     {
-        SceneManager.LoadScene(0);
-        PauseGame();
-        //EventManager.I.OnGameLoss_Invoke();
+        m_isPlayerAlive = false;
+        EventManager.I.OnGameLoss_Invoke();
     }
 }
