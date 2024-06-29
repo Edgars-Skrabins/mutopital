@@ -30,14 +30,14 @@ public class InputManager : Singleton<InputManager>
 
     private void SubscribeEvents()
     {
-        EventManager.I.OnGamePaused += HideCursor;
-        EventManager.I.OnGameUnPaused += UnHideCursor;
+        EventManager.I.OnGamePaused += UnHideCursor;
+        EventManager.I.OnGameUnPaused += HideCursor;
     }
 
     private void UnSubscribeEvents()
     {
-        EventManager.I.OnGamePaused -= HideCursor;
-        EventManager.I.OnGameUnPaused -= UnHideCursor;
+        EventManager.I.OnGamePaused -=  UnHideCursor;
+        EventManager.I.OnGameUnPaused -= HideCursor;
     }
 
     private void HideCursor()
