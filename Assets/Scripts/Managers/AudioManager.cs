@@ -13,8 +13,8 @@ public class AudioSFX
     public bool isMusic;
     public bool isUISFX;
     public bool randomizePitch;
-    public bool playOnAwake = false;
-    public bool loop = false;
+    public bool playOnAwake ;
+    public bool loop;
 }
 
 public class AudioManager : Singleton<AudioManager>
@@ -40,7 +40,7 @@ public class AudioManager : Singleton<AudioManager>
             foreach (AudioSFX sfx in m_audioSFXList)
             {
                 GameObject sfxObject = new GameObject(sfx.name, typeof(AudioSource));
-                sfxObject.transform.SetParent(this.transform);
+                sfxObject.transform.SetParent(transform);
 
                 AudioSource newAudioSource = sfxObject.GetComponent<AudioSource>();
                 newAudioSource.volume = sfx.volume;
