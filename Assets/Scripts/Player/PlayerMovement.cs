@@ -28,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
+        if (GameManager.I.IsGamePaused() || !GameManager.I.HasGameStarted())
+        {
+            return;
+        }
+
         Vector2 movement = InputManager.I.GetMovementVector2Normalized();
         Vector3 velocity = new Vector3(movement.x, 0, movement.y) * m_moveSpeed;
         m_playerRB.velocity = velocity;
