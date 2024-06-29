@@ -34,7 +34,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.I.HasGameStarted() || GameManager.I.IsGamePaused()) return;
+        if (!GameManager.I.HasGameStarted() || GameManager.I.IsGamePaused() || !GameManager.I.m_isPlayerAlive) return;
 
         m_currentAgentsCount = FindObjectsOfType<PatientController>().Length;
 
@@ -58,11 +58,9 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnPatient()
     {
-        
         PatientController spawnedAgent = Instantiate(m_spawnAgentPrefabs[Random.Range(0, m_spawnAgentPrefabs.Count)].prefab,
                 m_spawnPoint.position, Quaternion.identity).GetComponent<PatientController>();
 
-        //spawnedAgent.SetPatientMutationColor(spawnedAgent.GetComponent<Renderer>());
         spawnedAgent.SetDestination(m_target);
         spawnedAgent.m_medBayManager = m_medBayManager;
     }

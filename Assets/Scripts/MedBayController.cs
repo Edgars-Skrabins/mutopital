@@ -40,8 +40,10 @@ public class MedBayController : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.I.HasGameStarted() || GameManager.I.IsGamePaused() || !GameManager.I.m_isPlayerAlive) return;
+
         if(!IsMedbayOccupied())
-        FixOverlapingPatients();
+            FixOverlapingPatients();
     }
 
     private void FixOverlapingPatients()

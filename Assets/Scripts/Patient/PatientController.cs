@@ -20,10 +20,8 @@ public class PatientController : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.I.IsGamePaused())
-        {
-            return;
-        }
+        if (!GameManager.I.HasGameStarted() || GameManager.I.IsGamePaused() || !GameManager.I.m_isPlayerAlive) return;
+
 
         if (m_isHealed || m_stats.GetPatienceLevel() <= 0)
         {
