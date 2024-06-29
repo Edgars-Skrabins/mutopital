@@ -1,5 +1,5 @@
 using UnityEngine.SceneManagement;
-using Time = UnityEngine.Time;
+using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -90,5 +90,7 @@ public class GameManager : Singleton<GameManager>
     {
         m_isPlayerAlive = false;
         EventManager.I.OnGameLoss_Invoke();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

@@ -40,8 +40,7 @@ public class MedBayController : MonoBehaviour
 
     private void Update()
     {
-        IsMedbayOccupied();
-
+        if(!IsMedbayOccupied())
         FixOverlapingPatients();
     }
 

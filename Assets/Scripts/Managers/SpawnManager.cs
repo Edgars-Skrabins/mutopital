@@ -34,6 +34,8 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.I.HasGameStarted() || GameManager.I.IsGamePaused()) return;
+
         m_currentAgentsCount = FindObjectsOfType<PatientController>().Length;
 
         if (m_currentAgentsCount < m_MaxAgentsCount)
