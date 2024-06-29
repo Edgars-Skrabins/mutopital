@@ -60,6 +60,11 @@ public class PlayerUI : MonoBehaviour
 
     private void HandlePause()
     {
+        if (!GameManager.I.HasGameStarted())
+        {
+            return;
+        }
+
         if (GameManager.I.IsGamePaused())
         {
             GameManager.I.PauseGame();
